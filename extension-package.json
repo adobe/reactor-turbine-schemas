@@ -46,8 +46,6 @@
       "additionalProperties": false,
       "patternProperties": {
         "^(?![_\\.])[a-z0-9~_\\-\\.]{1,214}$": {
-          "type": "string",
-          "minLength": 1,
           "$ref": "#/definitions/semverrange"
         }
       }
