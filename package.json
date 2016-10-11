@@ -1,0 +1,13 @@
+{
+  "name": "@reactor/turbine-schemas",
+  "version": "1.0.0",
+  "description": "Schemas for modeling related to Turbine.",
+  "repository": {
+    "type": "git",
+    "url": "git@git.corp.adobe.com:reactor/turbine-schemas.git"
+  },
+  "author": {
+    "name": "DTM",
+    "email": "DTM-Engineering@adobe.com"
+  }
+}
