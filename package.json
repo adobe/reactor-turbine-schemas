@@ -1,6 +1,6 @@
 {
   "name": "@reactor/turbine-schemas",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "Schemas for modeling related to Turbine.",
   "repository": {
     "type": "git",
