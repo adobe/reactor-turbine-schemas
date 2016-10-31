@@ -88,12 +88,28 @@
           },
           "settings": {
             "type": "object"
+          },
+          "defaultValue": {
+            "type": "string"
+          },
+          "forceLowercase": {
+            "type": "boolean"
+          },
+          "cleanText": {
+            "type": "boolean"
+          },
+          "storageDuration": {
+            "enum": [
+              "pageview",
+              "session",
+              "visitor"
+            ]
           }
         },
         "required": [
           "modulePath"
         ],
-        "additionalProperties": true
+        "additionalProperties": false
       }
     },
     "extensions": {
