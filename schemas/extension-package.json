@@ -19,9 +19,10 @@
       "type": "string",
       "minLength": 1
     },
-    "icon": {
+    "iconPath": {
       "type": "string",
-      "minLength": 1
+      "minLength": 1,
+      "pattern": "^(?!\\/)[\\/a-zA-Z_\\-\\s0-9\\.]+\\.svg$"
     },
     "author": {
       "type": "object",
