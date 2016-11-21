@@ -67,7 +67,7 @@
           "$ref": "#/definitions/viewPath"
         },
         "schema": {
-          "$ref": "http://json-schema.org/draft-04/schema#"
+          "type": "object"
         },
         "transforms": {
           "$ref": "#/definitions/transforms"
@@ -186,7 +186,7 @@
             "$ref": "#/definitions/viewPath"
           },
           "schema": {
-            "$ref": "http://json-schema.org/draft-04/schema#"
+            "type": "object"
           },
           "transforms": {
             "$ref": "#/definitions/transforms"
