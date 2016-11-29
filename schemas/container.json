@@ -92,7 +92,7 @@
           "defaultValue": {
             "type": "string"
           },
-          "forceLowercase": {
+          "forceLowerCase": {
             "type": "boolean"
           },
           "cleanText": {
