@@ -217,19 +217,12 @@
               "propertyPath": {
                 "type": "string",
                 "minLength": 1
-              },
-              "extension": {
-                "enum": [
-                  "html",
-                  "js"
-                ]
               }
             },
             "additionalProperties": false,
             "required": [
               "type",
-              "propertyPath",
-              "extension"
+              "propertyPath"
             ]
           },
           {
