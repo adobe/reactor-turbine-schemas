@@ -197,7 +197,6 @@
           "name",
           "displayName",
           "libPath",
-          "viewPath",
           "schema"
         ]
       }
