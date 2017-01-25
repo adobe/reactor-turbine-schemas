@@ -1,5 +1,5 @@
 {
-  "name": "@reactor/turbine-schemas",
+  "name": "@adobe/composer-turbine-schemas",
   "version": "2.2.0",
   "description": "Schemas for modeling related to Turbine.",
   "repository": {
