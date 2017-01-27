@@ -1,4 +1,4 @@
-# turbine-schemas
+# @adobe/composer-turbine-schemas
 
 Schemas for modeling related to Turbine.
 
@@ -10,4 +10,4 @@ A schema describing the "container" output for Turbine. It contains rule, data e
 
 ### extension-package.json
 
-A schema describing the `extension.json` found in extension packages. The `extension.json` file describes the contents of an extension. More information can be found on the [extension development guide](http://reactor.corp.adobe.com/guides/extensions/extension-manifest/).
+A schema describing the `extension.json` found in extension packages. The `extension.json` file describes the contents of an extension. More information can be found on the extension development guide.
