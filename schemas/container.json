@@ -121,6 +121,10 @@
             "type": "string",
             "minLength": 1
           },
+          "hostedLibFilesBaseUrl": {
+            "type": "string",
+            "minLength": 1
+          },
           "settings": {
             "type": "object"
           },
