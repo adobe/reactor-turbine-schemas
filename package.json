@@ -1,7 +1,7 @@
 {
-  "name": "@adobe/composer-turbine-schemas",
+  "name": "@adobe/reactor-turbine-schemas",
   "version": "2.2.2",
-  "description": "Schemas for modeling related to Composer.",
+  "description": "Schemas for modeling related to Turbine.",
   "repository": {
     "type": "git",
     "url": "git@git.corp.adobe.com:reactor/turbine-schemas.git"

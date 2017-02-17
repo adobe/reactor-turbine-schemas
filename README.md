@@ -1,4 +1,4 @@
-# @adobe/composer-turbine-schemas
+# @adobe/reactor-turbine-schemas
 
 Schemas for modeling related to Turbine.
 
