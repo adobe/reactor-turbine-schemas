@@ -7,7 +7,8 @@
     "url": "git@git.corp.adobe.com:reactor/turbine-schemas.git"
   },
   "author": {
-    "name": "DTM",
-    "email": "DTM-Engineering@adobe.com"
+    "name": "Adobe Systems Incorporated",
+    "url": "http://adobe.com",
+    "email": "reactor@adobe.com"
   }
 }
