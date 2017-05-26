@@ -134,17 +134,22 @@
               "^[^\\/].*\\/.*\\.js$": {
                 "type": "object",
                 "properties": {
-                  "script": {},
+                  "name": {
+                    "type": "string",
+                    "minLength": 1,
+                    "pattern": "^(?![_\\.])[a-z0-9~_\\-\\.]{1,214}$"
+                  },
                   "displayName": {
                     "type": "string",
                     "minLength": 1
                   },
-                  "sharedName": {
-                    "type": "string",
-                    "minLength": 1
-                  }
+                  "shared": {
+                    "type": "boolean"
+                  },
+                  "script": {}
                 },
                 "required": [
+                  "name",
                   "script"
                 ],
                 "additionalProperties": false
