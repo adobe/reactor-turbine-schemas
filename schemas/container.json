@@ -149,7 +149,6 @@
                   "script": {}
                 },
                 "required": [
-                  "name",
                   "script"
                 ],
                 "additionalProperties": false
