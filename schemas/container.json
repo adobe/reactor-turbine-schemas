@@ -80,37 +80,40 @@
     },
     "dataElements": {
       "type": "object",
-      "additionalProperties": {
-        "type": "object",
-        "properties": {
-          "modulePath": {
-            "$ref": "#/definitions/modulePath"
+      "patternProperties": {
+        "^[^%]+$": {
+          "type": "object",
+          "properties": {
+            "modulePath": {
+              "$ref": "#/definitions/modulePath"
+            },
+            "settings": {
+              "type": "object"
+            },
+            "defaultValue": {
+              "type": "string"
+            },
+            "forceLowerCase": {
+              "type": "boolean"
+            },
+            "cleanText": {
+              "type": "boolean"
+            },
+            "storageDuration": {
+              "enum": [
+                "pageview",
+                "session",
+                "visitor"
+              ]
+            }
           },
-          "settings": {
-            "type": "object"
-          },
-          "defaultValue": {
-            "type": "string"
-          },
-          "forceLowerCase": {
-            "type": "boolean"
-          },
-          "cleanText": {
-            "type": "boolean"
-          },
-          "storageDuration": {
-            "enum": [
-              "pageview",
-              "session",
-              "visitor"
-            ]
-          }
-        },
-        "required": [
-          "modulePath"
-        ],
-        "additionalProperties": false
-      }
+          "required": [
+            "modulePath"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
     },
     "extensions": {
       "type": "object",
