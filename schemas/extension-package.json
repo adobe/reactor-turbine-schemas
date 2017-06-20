@@ -109,6 +109,9 @@
           "libPath"
         ]
       }
+    },
+    "main": {
+      "$ref": "#/definitions/libPath"
     }
   },
   "additionalProperties": false,
