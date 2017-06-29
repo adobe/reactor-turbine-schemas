@@ -169,7 +169,7 @@
         "undefinedVarsReturnEmpty": {
           "type": "boolean"
         },
-        "euCookieName": {
+        "trackingCookieName": {
           "type": "string"
         },
         "linkDelay": {
@@ -186,7 +186,7 @@
       },
       "required": [
         "undefinedVarsReturnEmpty",
-        "euCookieName",
+        "trackingCookieName",
         "linkDelay",
         "domains"
       ],
