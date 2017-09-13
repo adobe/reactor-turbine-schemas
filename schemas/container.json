@@ -179,7 +179,7 @@
           "type": "array",
           "items": {
             "type": "string",
-            "minLength": 1
+            "pattern": "^((?=[a-z0-9-_]{1,63}\\.)(xn--)?[a-z0-9_]+(-[a-z0-9_]+)*\\.)+[a-z]{2,63}$"
           },
           "uniqueItems": true
         }
