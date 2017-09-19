@@ -163,32 +163,46 @@
         "additionalProperties": false
       }
     },
-    "propertySettings": {
+    "property": {
       "type": "object",
       "properties": {
-        "undefinedVarsReturnEmpty": {
-          "type": "boolean"
+        "name": {
+          "type": "string",
+          "minLength": 1
         },
-        "trackingCookieName": {
-          "type": "string"
-        },
-        "linkDelay": {
-          "type": "integer"
-        },
-        "domains": {
-          "type": "array",
-          "items": {
-            "type": "string",
-            "pattern": "^((?=[a-z0-9-_]{1,63}\\.)(xn--)?[a-z0-9_]+(-[a-z0-9_]+)*\\.)+[a-z]{2,63}$"
+        "settings": {
+          "type": "object",
+          "properties": {
+            "undefinedVarsReturnEmpty": {
+              "type": "boolean"
+            },
+            "trackingCookieName": {
+              "type": "string"
+            },
+            "linkDelay": {
+              "type": "integer"
+            },
+            "domains": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^((?=[a-z0-9-_]{1,63}\\.)(xn--)?[a-z0-9_]+(-[a-z0-9_]+)*\\.)+[a-z]{2,63}$"
+              },
+              "uniqueItems": true
+            }
           },
-          "uniqueItems": true
+          "required": [
+            "undefinedVarsReturnEmpty",
+            "trackingCookieName",
+            "linkDelay",
+            "domains"
+          ],
+          "additionalProperties": false
         }
       },
       "required": [
-        "undefinedVarsReturnEmpty",
-        "trackingCookieName",
-        "linkDelay",
-        "domains"
+        "name",
+        "settings"
       ],
       "additionalProperties": false
     },
@@ -219,7 +233,7 @@
     }
   },
   "required": [
-    "propertySettings",
+    "property",
     "buildInfo"
   ],
   "additionalProperties": false,
