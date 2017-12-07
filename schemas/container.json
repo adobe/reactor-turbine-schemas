@@ -19,12 +19,16 @@
                 "modulePath": {
                   "$ref": "#/definitions/modulePath"
                 },
+                "ruleOrder": {
+                  "type": "integer"
+                },
                 "settings": {
                   "type": "object"
                 }
               },
               "required": [
-                "modulePath"
+                "modulePath",
+                "ruleOrder"
               ],
               "additionalProperties": true
             }
