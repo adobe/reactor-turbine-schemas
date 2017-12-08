@@ -20,7 +20,7 @@
                   "$ref": "#/definitions/modulePath"
                 },
                 "ruleOrder": {
-                  "type": "integer"
+                  "type": "number"
                 },
                 "settings": {
                   "type": "object"
