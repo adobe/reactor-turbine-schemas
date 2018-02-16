@@ -112,6 +112,11 @@
     },
     "main": {
       "$ref": "#/definitions/libPath"
+    },
+    "exchangeUrl" : {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^https:\\/\\/(?:experiencecloud\\.)?adobeexchange\\.com"
     }
   },
   "additionalProperties": false,
