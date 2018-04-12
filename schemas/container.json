@@ -11,6 +11,11 @@
             "type": "string",
             "minLength": 1
           },
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "RL[a-zA-Z0-9]{32}"
+          },
           "events": {
             "type": "array",
             "items": {
@@ -74,7 +79,8 @@
           }
         },
         "required": [
-          "name"
+          "name",
+          "id"
         ],
         "additionalProperties": false
       }
