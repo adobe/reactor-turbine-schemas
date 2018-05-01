@@ -35,7 +35,7 @@
                 "modulePath",
                 "ruleOrder"
               ],
-              "additionalProperties": true
+              "additionalProperties": false
             }
           },
           "conditions": {
@@ -56,7 +56,7 @@
               "required": [
                 "modulePath"
               ],
-              "additionalProperties": true
+              "additionalProperties": false
             }
           },
           "actions": {
@@ -74,7 +74,7 @@
               "required": [
                 "modulePath"
               ],
-              "additionalProperties": true
+              "additionalProperties": false
             }
           }
         },
