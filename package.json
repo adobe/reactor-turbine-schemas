@@ -10,5 +10,11 @@
     "name": "Adobe Systems",
     "url": "http://adobe.com",
     "email": "reactor@adobe.com"
+  },
+  "devDependencies": {
+    "ajv": "^6.5.0"
+  },
+  "scripts": {
+    "test": "node test/index.js"
   }
 }

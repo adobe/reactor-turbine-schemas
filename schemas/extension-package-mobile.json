@@ -1,0 +1,327 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://launch.adobe.com/schemas/extension-package-mobile.json",
+  "allOf": [
+    {
+      "$ref": "extension-package.json#/definitions/schema"
+    }
+  ],
+  "properties": {
+    "name": {},
+    "version": {},
+    "displayName": {},
+    "description": {},
+    "iconPath": {},
+    "author": {},
+    "viewBasePath": {},
+    "main": {},
+    "exchangeUrl": {},
+    "configuration": {
+      "allOf": [
+        {
+          "$ref": "extension-package.json#/definitions/configuration"
+        }
+      ],
+      "properties": {
+        "viewPath": {},
+        "schema": {}
+      },
+      "additionalProperties": false
+    },
+    "platform": {
+      "enum": [
+        "mobile"
+      ]
+    },
+    "repositories": {
+      "type": "array",
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/cocoapod"
+          },
+          {
+            "$ref": "#/definitions/maven"
+          }
+        ]
+      }
+    },
+    "events": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/feature-condition"
+      }
+    },
+    "conditions": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/feature-condition"
+      }
+    },
+    "actions": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/feature-action"
+      }
+    },
+    "dataElements": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/feature-dataElement"
+      }
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "platform",
+    "repositories"
+  ],
+  "definitions": {
+    "maven": {
+      "type": "object",
+      "properties": {
+        "groupId": {
+          "type": "string",
+          "pattern": "^[\\w\\.]+$"
+        },
+        "artifactId": {
+          "type": "string",
+          "pattern": "^[\\w\\-]+$"
+        },
+        "version": {
+          "type": "string",
+          "pattern": "^((\\(|\\[),?[0-9]+(?=.*(\\)|\\])$)|[0-9]+)\\.[0-9]+(\\.[0-9]+)?(-[A-z]+)?(-[0-9]+)?(|,?(\\)$|\\]$)|((,?(\\]|\\)),(\\(|\\[),?|,)[0-9]+\\.[0-9]+(\\.[0-9]+)?(-[A-z]+)?(-[0-9]+)?,?(\\)|\\])))$"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "groupId",
+        "artifactId",
+        "version"
+      ]
+    },
+    "cocoapod": {
+      "type": "object",
+      "properties": {
+        "libraryName": {
+          "type": "string",
+          "pattern": "^[\\w\\.]+$"
+        },
+        "version": {
+          "type": "string",
+          "pattern": "^~?>?\\w?[0-9]+\\.[0-9]+(\\.[0-9]+)?$"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "libraryName",
+        "version"
+      ]
+    },
+    "feature-schema": {
+      "type": "object",
+      "properties": {
+        "$schema": {
+          "type": "string"
+        },
+        "type": {
+          "enum": [
+            "array",
+            "object"
+          ]
+        }
+      },
+      "required": [
+        "$schema",
+        "type"
+      ]
+    },
+    "feature-condition": {
+      "allOf": [
+        {
+          "$ref": "extension-package.json#/definitions/feature"
+        }
+      ],
+      "properties": {
+        "name": {},
+        "categoryName": {},
+        "displayName": {},
+        "viewPath": {},
+        "schema": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/feature-schema"
+            }
+          ],
+          "properties": {
+            "$schema": {},
+            "type": {
+              "enum": [
+                "array"
+              ]
+            },
+            "items": {
+              "type": "object",
+              "properties": {
+                "allOf": {
+                  "type": "array",
+                  "items": {
+                    "oneOf": [
+                      {
+                        "type": "object",
+                        "properties": {
+                          "$ref": {
+                            "enum": [
+                              "extension-mobile-package.json#/definitions/condition"
+                            ]
+                          }
+                        },
+                        "required": [
+                          "$ref"
+                        ]
+                      }
+                    ]
+                  },
+                  "maxItems": 1,
+                  "minItems": 1
+                }
+              },
+              "required": [
+                "allOf"
+              ]
+            }
+          },
+          "required": [
+            "items"
+          ]
+        }
+      },
+      "required": [
+        "schema"
+      ],
+      "additionalProperties": false
+    },
+    "feature-action": {
+      "allOf": [
+        {
+          "$ref": "extension-package.json#/definitions/feature"
+        }
+      ],
+      "properties": {
+        "name": {},
+        "categoryName": {},
+        "displayName": {},
+        "viewPath": {},
+        "schema": {
+          "type": "object"
+        }
+      },
+      "additionalProperties": false
+    },
+    "feature-dataElement": {
+      "allOf": [
+        {
+          "$ref": "extension-package.json#/definitions/feature"
+        }
+      ],
+      "properties": {
+        "name": {},
+        "categoryName": {},
+        "displayName": {},
+        "viewPath": {},
+        "schema": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/feature-schema"
+            }
+          ],
+          "properties": {
+            "$schema": {},
+            "allOf": {
+              "type": "array",
+              "items": {
+                "oneOf": [
+                  {
+                    "type": "object",
+                    "properties": {
+                      "$ref": {
+                        "enum": [
+                          "extension-mobile-package.json#/definitions/dataElement"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "$ref"
+                    ]
+                  }
+                ]
+              },
+              "maxItems": 1,
+              "minItems": 1
+            }
+          },
+          "required": [
+            "allOf"
+          ]
+        }
+      },
+      "required": [
+        "schema"
+      ],
+      "additionalProperties": false
+    },
+    "condition": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "enum": [
+            "matcher"
+          ]
+        },
+        "definition": {
+          "type": "object",
+          "properties": {
+            "key": {
+              "type": "string"
+            },
+            "matcher": {
+              "enum": [
+                "eq",
+                "ne",
+                "ex",
+                "nx",
+                "gt",
+                "ge",
+                "lt",
+                "le",
+                "co",
+                "nc"
+              ]
+            },
+            "values": {
+              "type": "array"
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "key",
+            "matcher",
+            "values"
+          ]
+        }
+      }
+    },
+    "dataElement": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "path"
+      ]
+    }
+  }
+}

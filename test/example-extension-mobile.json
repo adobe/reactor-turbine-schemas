@@ -1,0 +1,137 @@
+{
+  "displayName": "Mobile Adobe Analytics",
+  "name": "mobile-adobe-analytics",
+  "version": "1.0.0",
+  "description": "Adobe Analytics is an industry-leading solution that empowers you to understand your customers as people and steer your business with customer intelligence.",
+  "author": {
+    "name": "Adobe Systems"
+  },
+  "repositories": [
+    {
+      "groupId": "com.adobe.marketing.mobile",
+      "artifactId": "AdobeMobileSDKAnalytics",
+      "version": "[5.0,6.0)"
+    },
+    {
+      "libraryName": "AdobeMobileSDKAnalytics",
+      "version": "~>5.0"
+    }
+  ],
+  "platform": "mobile",
+  "viewBasePath": "dist/",
+  "configuration": {
+    "viewPath": "configuration.html",
+    "schema": {
+      "$schema": "http://json-schema.org/draft-04/schema#",
+      "type": "object",
+      "properties": {
+        "analytics.rsids": {
+          "type": "string"
+        },
+        "analytics.offline": {
+          "type": "boolean"
+        },
+        "analytics.aam": {
+          "type": "boolean"
+        },
+        "analytics.batchLimit": {
+          "type": "number",
+          "minimum": 0
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "events": [
+    {
+      "name": "test",
+      "categoryName": "test",
+      "displayName": "test",
+      "viewPath": "events/test.html",
+      "schema": {
+        "$schema": "http://json-schema.org/draft-04/schema#",
+        "type": "array",
+        "items": {
+          "allOf": [
+            {
+              "$ref": "extension-mobile-package.json#/definitions/condition"
+            }
+          ],
+          "properties": {
+            "definition": {
+              "properties": {
+                "values": {
+                  "items": {
+                    "pattern": "[A-z0-9_]*",
+                    "minimum": 1,
+                    "minLength": 1
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "name": "test",
+      "categoryName": "test",
+      "displayName": "test",
+      "viewPath": "events/test.html",
+      "schema": {
+        "$schema": "http://json-schema.org/draft-04/schema#",
+        "type": "array",
+        "items": {
+          "allOf": [
+            {
+              "$ref": "extension-mobile-package.json#/definitions/condition"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "actions": [
+    {
+      "name": "test",
+      "categoryName": "test",
+      "displayName": "test",
+      "viewPath": "events/test.html",
+      "schema": {
+        "$schema": "http://json-schema.org/draft-04/schema#",
+        "type": "object",
+        "properties": {
+          "action": {
+            "type": "string"
+          },
+          "state": {
+            "type": "string"
+          },
+          "contextData": {
+            "type": "object"
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  ],
+  "dataElements": [
+    {
+      "name": "test",
+      "categoryName": "test",
+      "displayName": "test",
+      "viewPath": "events/test.html",
+      "schema": {
+        "$schema": "http://json-schema.org/draft-04/schema#",
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "extension-mobile-package.json#/definitions/dataElement"
+          }
+        ]
+      }
+    }
+  ]
+}
