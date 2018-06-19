@@ -54,7 +54,7 @@
         "items": {
           "allOf": [
             {
-              "$ref": "extension-mobile-package.json#/definitions/condition"
+              "$ref": "https://assets.adobedtm.com/activation/reactor/schemas/1.0/extension-definitions-mobile.json#/definitions/condition"
             }
           ],
           "properties": {
@@ -86,7 +86,7 @@
         "items": {
           "allOf": [
             {
-              "$ref": "extension-mobile-package.json#/definitions/condition"
+              "$ref": "https://assets.adobedtm.com/activation/reactor/schemas/1.0/extension-definitions-mobile.json#/definitions/condition"
             }
           ]
         }
@@ -128,7 +128,7 @@
         "type": "object",
         "allOf": [
           {
-            "$ref": "extension-mobile-package.json#/definitions/dataElement"
+            "$ref": "https://assets.adobedtm.com/activation/reactor/schemas/1.0/extension-definitions-mobile.json#/definitions/data-element"
           }
         ]
       }
