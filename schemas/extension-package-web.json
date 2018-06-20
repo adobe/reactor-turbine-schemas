@@ -37,6 +37,11 @@
     "configuration": {
       "$ref": "#/definitions/configuration"
     },
+    "platform": {
+      "enum": [
+        "web"
+      ]
+    },
     "hostedLibFiles": {
       "type": "array",
       "items": {
