@@ -1,32 +1,57 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "$id": "http://launch.adobe.com/schemas/extension-package-mobile.json",
-  "allOf": [
-    {
-      "$ref": "#/definitions/schema"
-    }
-  ],
+  "type": "object",
   "properties": {
-    "name": {},
-    "version": {},
-    "displayName": {},
-    "description": {},
-    "iconPath": {},
-    "author": {},
-    "viewBasePath": {},
-    "main": {},
-    "exchangeUrl": {},
-    "configuration": {
-      "allOf": [
-        {
-          "$ref": "#/definitions/configuration"
-        }
-      ],
+    "name": {
+      "$ref": "#/definitions/name"
+    },
+    "version": {
+      "$ref": "#/definitions/semver"
+    },
+    "displayName": {
+      "$ref": "#/definitions/displayName"
+    },
+    "description": {
+      "type": "string",
+      "minLength": 1
+    },
+    "iconPath": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^(?!\\/)[\\/a-zA-Z_\\-\\s0-9\\.]+\\.svg$"
+    },
+    "author": {
+      "type": "object",
       "properties": {
-        "viewPath": {},
-        "schema": {}
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "url": {
+          "$ref": "#/definitions/url"
+        },
+        "email": {
+          "$ref": "#/definitions/email"
+        }
       },
-      "additionalProperties": false
+      "required": [
+        "name"
+      ]
+    },
+    "viewBasePath": {
+      "$ref": "#/definitions/basePath"
+    },
+    "main": {
+      "$ref": "#/definitions/libPath"
+    },
+    "exchangeUrl": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^https:\\/\\/(?:(?:experiencecloud|www)\\.)?adobeexchange\\.com"
+    },
+    "configuration": {
+      "$ref": "#/definitions/configuration"
     },
     "platform": {
       "enum": [
@@ -73,6 +98,12 @@
   },
   "additionalProperties": false,
   "required": [
+    "name",
+    "version",
+    "displayName",
+    "description",
+    "author",
+    "viewBasePath",
     "platform",
     "repositories"
   ],
@@ -271,71 +302,6 @@
       "additionalProperties": false
     },
     "schema": {
-      "type": "object",
-      "properties": {
-        "name": {
-          "$ref": "#/definitions/name"
-        },
-        "version": {
-          "$ref": "#/definitions/semver"
-        },
-        "displayName": {
-          "$ref": "#/definitions/displayName"
-        },
-        "description": {
-          "type": "string",
-          "minLength": 1
-        },
-        "iconPath": {
-          "type": "string",
-          "minLength": 1,
-          "pattern": "^(?!\\/)[\\/a-zA-Z_\\-\\s0-9\\.]+\\.svg$"
-        },
-        "author": {
-          "type": "object",
-          "properties": {
-            "name": {
-              "type": "string",
-              "minLength": 1
-            },
-            "url": {
-              "$ref": "#/definitions/url"
-            },
-            "email": {
-              "$ref": "#/definitions/email"
-            }
-          },
-          "required": [
-            "name"
-          ]
-        },
-        "viewBasePath": {
-          "$ref": "#/definitions/basePath"
-        },
-        "main": {
-          "$ref": "#/definitions/libPath"
-        },
-        "exchangeUrl": {
-          "type": "string",
-          "minLength": 1,
-          "pattern": "^https:\\/\\/(?:(?:experiencecloud|www)\\.)?adobeexchange\\.com"
-        },
-        "configuration": {
-          "$ref": "#/definitions/configuration"
-        },
-        "events": {},
-        "conditions": {},
-        "actions": {},
-        "dataElements": {}
-      },
-      "required": [
-        "name",
-        "version",
-        "displayName",
-        "description",
-        "author",
-        "viewBasePath"
-      ]
     },
     "name": {
       "type": "string",
@@ -386,6 +352,7 @@
           "type": "object"
         }
       },
+      "additionalProperties": false,
       "required": [
         "viewPath",
         "schema"

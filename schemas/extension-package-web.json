@@ -1,35 +1,41 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "$id": "http://launch.adobe.com/schemas/extension-package-web.json",
-  "allOf": [
-    {
-      "$ref": "#/definitions/schema"
-    }
-  ],
   "properties": {
-    "name": {},
-    "version": {},
-    "displayName": {},
-    "description": {},
-    "iconPath": {},
-    "author": {},
-    "viewBasePath": {},
-    "main": {},
-    "exchangeUrl": {},
+    "name": {
+      "$ref": "#/definitions/name"
+    },
+    "version": {
+      "$ref": "#/definitions/semver"
+    },
+    "displayName": {
+      "$ref": "#/definitions/displayName"
+    },
+    "description": {
+      "type": "string",
+      "minLength": 1
+    },
+    "iconPath": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^(?!\\/)[\\/a-zA-Z_\\-\\s0-9\\.]+\\.svg$"
+    },
+    "author": {
+      "$ref": "#/definitions/author"
+    },
+    "viewBasePath": {
+      "$ref": "#/definitions/basePath"
+    },
+    "main": {
+      "$ref": "#/definitions/libPath"
+    },
+    "exchangeUrl": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^https:\\/\\/(?:(?:experiencecloud|www)\\.)?adobeexchange\\.com"
+    },
     "configuration": {
-      "allOf": [
-        {
-          "$ref": "#/definitions/configuration"
-        }
-      ],
-      "properties": {
-        "viewPath": {},
-        "schema": {},
-        "transforms": {
-          "$ref": "#/definitions/transforms"
-        }
-      },
-      "additionalProperties": false
+      "$ref": "#/definitions/configuration"
     },
     "hostedLibFiles": {
       "type": "array",
@@ -52,53 +58,110 @@
     "sharedModules": {
       "type": "array",
       "items": {
-        "type": "object",
-        "properties": {
-          "name": {
-            "$ref": "#/definitions/name"
-          },
-          "libPath": {
-            "$ref": "#/definitions/libPath"
-          }
-        },
-        "additionalProperties": false,
-        "required": [
-          "name",
-          "libPath"
-        ]
+        "$ref": "#/definitions/sharedModule"
       }
     }
   },
   "additionalProperties": false,
+  "required": [
+    "name",
+    "version",
+    "displayName",
+    "description",
+    "author",
+    "viewBasePath"
+  ],
   "definitions": {
+    "sharedModule": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "$ref": "#/definitions/name"
+        },
+        "libPath": {
+          "$ref": "#/definitions/libPath"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "libPath"
+      ]
+    },
+    "author": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "url": {
+          "$ref": "#/definitions/url"
+        },
+        "email": {
+          "$ref": "#/definitions/email"
+        }
+      },
+      "required": [
+        "name"
+      ]
+    },
+    "fileTransform": {
+      "properties": {
+        "type": {
+          "enum": [
+            "file"
+          ]
+        },
+        "propertyPath": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "type",
+        "propertyPath"
+      ]
+    },
+    "functionTransform": {
+      "properties": {
+        "type": {
+          "enum": [
+            "function"
+          ]
+        },
+        "propertyPath": {
+          "type": "string",
+          "minLength": 1
+        },
+        "parameters": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "type",
+        "propertyPath"
+      ]
+    },
+    "customCodeTransform": {
+      "properties": {
+        "type": {
+          "enum": [
+            "customCode"
+          ]
+        }
+      }
+    },
     "features": {
       "type": "array",
       "items": {
-        "allOf": [
-          {
-            "$ref": "#/definitions/feature"
-          }
-        ],
-        "properties": {
-          "name": {},
-          "displayName": {},
-          "categoryName": {},
-          "viewPath": {},
-          "libPath": {
-            "$ref": "#/definitions/libPath"
-          },
-          "schema": {
-            "type": "object"
-          },
-          "transforms": {
-            "$ref": "#/definitions/transforms"
-          }
-        },
-        "additionalProperties": false,
-        "required": [
-          "libPath",
-          "schema"
-        ]
+        "$ref": "#/definitions/feature"
       }
     },
     "transforms": {
@@ -107,126 +170,16 @@
         "type": "object",
         "oneOf": [
           {
-            "properties": {
-              "type": {
-                "enum": [
-                  "file"
-                ]
-              },
-              "propertyPath": {
-                "type": "string",
-                "minLength": 1
-              }
-            },
-            "additionalProperties": false,
-            "required": [
-              "type",
-              "propertyPath"
-            ]
+            "$ref": "#/definitions/fileTransform"
           },
           {
-            "properties": {
-              "type": {
-                "enum": [
-                  "function"
-                ]
-              },
-              "propertyPath": {
-                "type": "string",
-                "minLength": 1
-              },
-              "parameters": {
-                "type": "array",
-                "items": {
-                  "type": "string",
-                  "minLength": 1
-                }
-              }
-            },
-            "additionalProperties": false,
-            "required": [
-              "type",
-              "propertyPath"
-            ]
+            "$ref": "#/definitions/functionTransform"
           },
           {
-            "properties": {
-              "type": {
-                "enum": [
-                  "customCode"
-                ]
-              }
-            }
+            "$ref": "#/definitions/customCodeTransform"
           }
         ]
       }
-    },
-    "schema": {
-      "type": "object",
-      "properties": {
-        "name": {
-          "$ref": "#/definitions/name"
-        },
-        "version": {
-          "$ref": "#/definitions/semver"
-        },
-        "displayName": {
-          "$ref": "#/definitions/displayName"
-        },
-        "description": {
-          "type": "string",
-          "minLength": 1
-        },
-        "iconPath": {
-          "type": "string",
-          "minLength": 1,
-          "pattern": "^(?!\\/)[\\/a-zA-Z_\\-\\s0-9\\.]+\\.svg$"
-        },
-        "author": {
-          "type": "object",
-          "properties": {
-            "name": {
-              "type": "string",
-              "minLength": 1
-            },
-            "url": {
-              "$ref": "#/definitions/url"
-            },
-            "email": {
-              "$ref": "#/definitions/email"
-            }
-          },
-          "required": [
-            "name"
-          ]
-        },
-        "viewBasePath": {
-          "$ref": "#/definitions/basePath"
-        },
-        "main": {
-          "$ref": "#/definitions/libPath"
-        },
-        "exchangeUrl": {
-          "type": "string",
-          "minLength": 1,
-          "pattern": "^https:\\/\\/(?:(?:experiencecloud|www)\\.)?adobeexchange\\.com"
-        },
-        "configuration": {
-          "$ref": "#/definitions/configuration"
-        },
-        "events": {},
-        "conditions": {},
-        "actions": {},
-        "dataElements": {}
-      },
-      "required": [
-        "name",
-        "version",
-        "displayName",
-        "description",
-        "author",
-        "viewBasePath"
-      ]
     },
     "name": {
       "type": "string",
@@ -296,11 +249,23 @@
         },
         "viewPath": {
           "$ref": "#/definitions/viewPath"
+        },
+        "libPath": {
+          "$ref": "#/definitions/libPath"
+        },
+        "schema": {
+          "type": "object"
+        },
+        "transforms": {
+          "$ref": "#/definitions/transforms"
         }
       },
+      "additionalProperties": false,
       "required": [
         "name",
-        "displayName"
+        "displayName",
+        "libPath",
+        "schema"
       ]
     }
   }
