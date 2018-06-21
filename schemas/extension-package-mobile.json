@@ -273,7 +273,7 @@
             "properties": {
               "type": "object",
               "properties": {
-                "consequence": {
+                "detail": {
                   "type": "object",
                   "properties": {
                     "type": {
@@ -292,7 +292,7 @@
                 }
               },
               "required": [
-                "consequence"
+                "detail"
               ]
             }
           }
