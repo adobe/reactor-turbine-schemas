@@ -50,21 +50,26 @@
       "viewPath": "events/test.html",
       "schema": {
         "$schema": "http://json-schema.org/draft-04/schema#",
-        "type": "array",
-        "items": {
-          "allOf": [
-            {
-              "$ref": "https://assets.adobedtm.com/activation/reactor/schemas/1.0/extension-definitions-mobile.json#/definitions/condition"
-            }
-          ],
-          "properties": {
-            "definition": {
+        "type": "object",
+        "properties": {
+          "conditions": {
+            "type": "array",
+            "items": {
+              "allOf": [
+                {
+                  "$ref": "https://assets.adobedtm.com/activation/reactor/schemas/1.0/extension-definitions-mobile.json#/definitions/condition"
+                }
+              ],
               "properties": {
-                "values": {
-                  "items": {
-                    "pattern": "[A-z0-9_]*",
-                    "minimum": 1,
-                    "minLength": 1
+                "definition": {
+                  "properties": {
+                    "values": {
+                      "items": {
+                        "pattern": "[A-z0-9_]*",
+                        "minimum": 1,
+                        "minLength": 1
+                      }
+                    }
                   }
                 }
               }
@@ -82,13 +87,18 @@
       "viewPath": "events/test.html",
       "schema": {
         "$schema": "http://json-schema.org/draft-04/schema#",
-        "type": "array",
-        "items": {
-          "allOf": [
-            {
-              "$ref": "https://assets.adobedtm.com/activation/reactor/schemas/1.0/extension-definitions-mobile.json#/definitions/condition"
+        "type": "object",
+        "properties": {
+          "conditions": {
+            "type": "array",
+            "items": {
+              "allOf": [
+                {
+                  "$ref": "https://assets.adobedtm.com/activation/reactor/schemas/1.0/extension-definitions-mobile.json#/definitions/condition"
+                }
+              ]
             }
-          ]
+          }
         }
       }
     }
@@ -103,14 +113,19 @@
         "$schema": "http://json-schema.org/draft-04/schema#",
         "type": "object",
         "properties": {
-          "action": {
-            "type": "string"
-          },
-          "state": {
-            "type": "string"
-          },
-          "contextData": {
-            "type": "object"
+          "consequence": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "state": {
+                "type": "string"
+              },
+              "contextData": {
+                "type": "object"
+              }
+            }
           }
         },
         "additionalProperties": false

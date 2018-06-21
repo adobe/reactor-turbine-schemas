@@ -157,7 +157,6 @@
         },
         "type": {
           "enum": [
-            "array",
             "object"
           ]
         }
@@ -186,44 +185,63 @@
           ],
           "properties": {
             "$schema": {},
-            "type": {
-              "enum": [
-                "array"
-              ]
-            },
-            "items": {
+            "type": {},
+            "properties": {
               "type": "object",
               "properties": {
-                "allOf": {
-                  "type": "array",
-                  "items": {
-                    "oneOf": [
-                      {
-                        "type": "object",
-                        "properties": {
-                          "$ref": {
-                            "enum": [
-                              "https://assets.adobedtm.com/activation/reactor/schemas/1.0/extension-definitions-mobile.json#/definitions/condition"
+                "conditions": {
+                  "type": "object",
+                  "properties": {
+                    "type": {
+                      "enum": [
+                        "array"
+                      ]
+                    },
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "allOf": {
+                          "type": "array",
+                          "items": {
+                            "oneOf": [
+                              {
+                                "type": "object",
+                                "properties": {
+                                  "$ref": {
+                                    "enum": [
+                                      "https://assets.adobedtm.com/activation/reactor/schemas/1.0/extension-definitions-mobile.json#/definitions/condition"
+                                    ]
+                                  }
+                                },
+                                "required": [
+                                  "$ref"
+                                ]
+                              }
                             ]
-                          }
-                        },
-                        "required": [
-                          "$ref"
-                        ]
-                      }
-                    ]
+                          },
+                          "maxItems": 1,
+                          "minItems": 1
+                        }
+                      },
+                      "required": [
+                        "allOf"
+                      ]
+                    }
                   },
-                  "maxItems": 1,
-                  "minItems": 1
+                  "required": [
+                    "type",
+                    "items"
+                  ],
+                  "additionalProperties": false
                 }
               },
               "required": [
-                "allOf"
+                "conditions"
               ]
             }
           },
           "required": [
-            "items"
+            "properties"
           ]
         }
       },
@@ -244,7 +262,40 @@
         "displayName": {},
         "viewPath": {},
         "schema": {
-          "type": "object"
+          "allOf": [
+            {
+              "$ref": "#/definitions/feature-schema"
+            }
+          ],
+          "properties": {
+            "$schema": {},
+            "type": {},
+            "properties": {
+              "type": "object",
+              "properties": {
+                "consequence": {
+                  "type": "object",
+                  "properties": {
+                    "type": {
+                      "enum": [
+                        "object"
+                      ]
+                    },
+                    "properties": {
+                      "type": "object"
+                    }
+                  },
+                  "required": [
+                    "type",
+                    "properties"
+                  ]
+                }
+              },
+              "required": [
+                "consequence"
+              ]
+            }
+          }
         }
       },
       "additionalProperties": false
@@ -301,8 +352,7 @@
       ],
       "additionalProperties": false
     },
-    "schema": {
-    },
+    "schema": {},
     "name": {
       "type": "string",
       "minLength": 1,
