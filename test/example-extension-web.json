@@ -14,6 +14,7 @@
     "hosted/AppMeasurement_Module_AudienceManagement.js"
   ],
   "viewBasePath": "dist/",
+  "platform": "web",
   "configuration": {
     "viewPath": "extensionConfiguration.html",
     "schema": {
