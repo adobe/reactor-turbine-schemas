@@ -51,25 +51,20 @@
       "schema": {
         "$schema": "http://json-schema.org/draft-04/schema#",
         "type": "object",
+        "allOf": [
+          {
+            "$ref": "https://assets.adobedtm.com/activation/reactor/schemas/1.0/extension-definitions-mobile.json#/definitions/conditions"
+          }
+        ],
         "properties": {
           "conditions": {
-            "type": "array",
-            "items": {
-              "allOf": [
-                {
-                  "$ref": "https://assets.adobedtm.com/activation/reactor/schemas/1.0/extension-definitions-mobile.json#/definitions/condition"
-                }
-              ],
-              "properties": {
-                "definition": {
-                  "properties": {
-                    "values": {
-                      "items": {
-                        "pattern": "[A-z0-9_]*",
-                        "minimum": 1,
-                        "minLength": 1
-                      }
-                    }
+            "properties": {
+              "definition": {
+                "values": {
+                  "items": {
+                    "pattern": "[A-z0-9_]*",
+                    "minimum": 1,
+                    "minLength": 1
                   }
                 }
               }
@@ -88,18 +83,11 @@
       "schema": {
         "$schema": "http://json-schema.org/draft-04/schema#",
         "type": "object",
-        "properties": {
-          "conditions": {
-            "type": "array",
-            "items": {
-              "allOf": [
-                {
-                  "$ref": "https://assets.adobedtm.com/activation/reactor/schemas/1.0/extension-definitions-mobile.json#/definitions/condition"
-                }
-              ]
-            }
+        "allOf": [
+          {
+            "$ref": "https://assets.adobedtm.com/activation/reactor/schemas/1.0/extension-definitions-mobile.json#/definitions/conditions"
           }
-        }
+        ]
       }
     }
   ],
@@ -112,6 +100,11 @@
       "schema": {
         "$schema": "http://json-schema.org/draft-04/schema#",
         "type": "object",
+        "allOf": [
+          {
+            "$ref": "https://assets.adobedtm.com/activation/reactor/schemas/1.0/extension-definitions-mobile.json#/definitions/consequence"
+          }
+        ],
         "properties": {
           "detail": {
             "type": "object",
@@ -120,15 +113,14 @@
                 "type": "string"
               },
               "state": {
-                "type": "string"
+                "state": "string"
               },
               "contextData": {
                 "type": "object"
               }
             }
           }
-        },
-        "additionalProperties": false
+        }
       }
     }
   ],
