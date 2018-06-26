@@ -185,63 +185,31 @@
           ],
           "properties": {
             "$schema": {},
-            "type": {},
-            "properties": {
-              "type": "object",
-              "properties": {
-                "conditions": {
-                  "type": "object",
-                  "properties": {
-                    "type": {
-                      "enum": [
-                        "array"
-                      ]
+            "allOf": {
+              "type": "array",
+              "items": {
+                "oneOf": [
+                  {
+                    "type": "object",
+                    "properties": {
+                      "$ref": {
+                        "enum": [
+                          "https://assets.adobedtm.com/activation/reactor/schemas/1.0/extension-definitions-mobile.json#/definitions/conditions"
+                        ]
+                      }
                     },
-                    "items": {
-                      "type": "object",
-                      "properties": {
-                        "allOf": {
-                          "type": "array",
-                          "items": {
-                            "oneOf": [
-                              {
-                                "type": "object",
-                                "properties": {
-                                  "$ref": {
-                                    "enum": [
-                                      "https://assets.adobedtm.com/activation/reactor/schemas/1.0/extension-definitions-mobile.json#/definitions/condition"
-                                    ]
-                                  }
-                                },
-                                "required": [
-                                  "$ref"
-                                ]
-                              }
-                            ]
-                          },
-                          "maxItems": 1,
-                          "minItems": 1
-                        }
-                      },
-                      "required": [
-                        "allOf"
-                      ]
-                    }
-                  },
-                  "required": [
-                    "type",
-                    "items"
-                  ],
-                  "additionalProperties": false
-                }
+                    "required": [
+                      "$ref"
+                    ]
+                  }
+                ]
               },
-              "required": [
-                "conditions"
-              ]
+              "maxItems": 1,
+              "minItems": 1
             }
           },
           "required": [
-            "properties"
+            "allOf"
           ]
         }
       },
@@ -269,35 +237,37 @@
           ],
           "properties": {
             "$schema": {},
-            "type": {},
-            "properties": {
-              "type": "object",
-              "properties": {
-                "detail": {
-                  "type": "object",
-                  "properties": {
-                    "type": {
-                      "enum": [
-                        "object"
-                      ]
-                    },
+            "allOf": {
+              "type": "array",
+              "items": {
+                "oneOf": [
+                  {
+                    "type": "object",
                     "properties": {
-                      "type": "object"
-                    }
-                  },
-                  "required": [
-                    "type",
-                    "properties"
-                  ]
-                }
+                      "$ref": {
+                        "enum": [
+                          "https://assets.adobedtm.com/activation/reactor/schemas/1.0/extension-definitions-mobile.json#/definitions/consequence"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "$ref"
+                    ]
+                  }
+                ]
               },
-              "required": [
-                "detail"
-              ]
+              "maxItems": 1,
+              "minItems": 1
             }
-          }
+          },
+          "required": [
+            "allOf"
+          ]
         }
       },
+      "required": [
+        "schema"
+      ],
       "additionalProperties": false
     },
     "feature-dataElement": {
