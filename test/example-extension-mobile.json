@@ -113,7 +113,7 @@
                 "type": "string"
               },
               "state": {
-                "state": "string"
+                "type": "string"
               },
               "contextData": {
                 "type": "object"
