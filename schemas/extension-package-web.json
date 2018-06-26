@@ -74,7 +74,8 @@
     "displayName",
     "description",
     "author",
-    "viewBasePath"
+    "viewBasePath",
+    "platform"
   ],
   "definitions": {
     "sharedModule": {
