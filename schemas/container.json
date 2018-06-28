@@ -186,12 +186,6 @@
             "undefinedVarsReturnEmpty": {
               "type": "boolean"
             },
-            "trackingCookieName": {
-              "type": "string"
-            },
-            "linkDelay": {
-              "type": "integer"
-            },
             "domains": {
               "type": "array",
               "items": {
@@ -203,8 +197,6 @@
           },
           "required": [
             "undefinedVarsReturnEmpty",
-            "trackingCookieName",
-            "linkDelay",
             "domains"
           ],
           "additionalProperties": false
