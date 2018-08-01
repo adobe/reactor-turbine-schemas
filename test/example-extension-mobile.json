@@ -8,11 +8,13 @@
   },
   "repositories": [
     {
+      "className": "ADBMobileMarketing",
       "groupId": "com.adobe.marketing.mobile",
       "artifactId": "AdobeMobileSDKAnalytics",
       "version": "[5.0,6.0)"
     },
     {
+      "className": "ADBMobileMarketing.h",
       "libraryName": "AdobeMobileSDKAnalytics",
       "version": "~>5.0"
     }
