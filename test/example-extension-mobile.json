@@ -55,7 +55,7 @@
         "type": "object",
         "allOf": [
           {
-            "$ref": "https://assets.adobedtm.com/activation/reactor/schemas/1.0/extension-definitions-mobile.json#/definitions/conditions"
+            "$ref": "https://assets.adobedtm.com/activation/reactor/schemas/1.0/extension-definitions-mobile.json#/definitions/event-conditions"
           }
         ],
         "properties": {

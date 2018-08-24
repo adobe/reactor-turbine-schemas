@@ -74,7 +74,7 @@
     "events": {
       "type": "array",
       "items": {
-        "$ref": "#/definitions/feature-condition"
+        "$ref": "#/definitions/feature-event"
       }
     },
     "conditions": {
@@ -175,6 +175,58 @@
         "$schema",
         "type"
       ]
+    },
+    "feature-event": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/feature"
+        }
+      ],
+      "properties": {
+        "name": {},
+        "categoryName": {},
+        "displayName": {},
+        "viewPath": {},
+        "schema": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/feature-schema"
+            }
+          ],
+          "properties": {
+            "$schema": {},
+            "allOf": {
+              "type": "array",
+              "items": {
+                "oneOf": [
+                  {
+                    "type": "object",
+                    "properties": {
+                      "$ref": {
+                        "enum": [
+                          "https://assets.adobedtm.com/activation/reactor/schemas/1.0/extension-definitions-mobile.json#/definitions/event-conditions"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "$ref"
+                    ]
+                  }
+                ]
+              },
+              "maxItems": 1,
+              "minItems": 1
+            }
+          },
+          "required": [
+            "allOf"
+          ]
+        }
+      },
+      "required": [
+        "schema"
+      ],
+      "additionalProperties": false
     },
     "feature-condition": {
       "allOf": [
