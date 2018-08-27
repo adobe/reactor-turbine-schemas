@@ -74,25 +74,25 @@
     "events": {
       "type": "array",
       "items": {
-        "$ref": "#/definitions/feature-condition"
+        "$ref": "#/definitions/featureEvent"
       }
     },
     "conditions": {
       "type": "array",
       "items": {
-        "$ref": "#/definitions/feature-condition"
+        "$ref": "#/definitions/featureConditions"
       }
     },
     "actions": {
       "type": "array",
       "items": {
-        "$ref": "#/definitions/feature-action"
+        "$ref": "#/definitions/featureAction"
       }
     },
     "dataElements": {
       "type": "array",
       "items": {
-        "$ref": "#/definitions/feature-dataElement"
+        "$ref": "#/definitions/featureDataElement"
       }
     }
   },
@@ -159,7 +159,7 @@
         "version"
       ]
     },
-    "feature-schema": {
+    "featureSchema": {
       "type": "object",
       "properties": {
         "$schema": {
@@ -176,7 +176,7 @@
         "type"
       ]
     },
-    "feature-condition": {
+    "featureEvent": {
       "allOf": [
         {
           "$ref": "#/definitions/feature"
@@ -190,7 +190,59 @@
         "schema": {
           "allOf": [
             {
-              "$ref": "#/definitions/feature-schema"
+              "$ref": "#/definitions/featureSchema"
+            }
+          ],
+          "properties": {
+            "$schema": {},
+            "allOf": {
+              "type": "array",
+              "items": {
+                "oneOf": [
+                  {
+                    "type": "object",
+                    "properties": {
+                      "$ref": {
+                        "enum": [
+                          "https://assets.adobedtm.com/activation/reactor/schemas/1.0/extension-definitions-mobile.json#/definitions/eventConditions"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "$ref"
+                    ]
+                  }
+                ]
+              },
+              "maxItems": 1,
+              "minItems": 1
+            }
+          },
+          "required": [
+            "allOf"
+          ]
+        }
+      },
+      "required": [
+        "schema"
+      ],
+      "additionalProperties": false
+    },
+    "featureConditions": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/feature"
+        }
+      ],
+      "properties": {
+        "name": {},
+        "categoryName": {},
+        "displayName": {},
+        "viewPath": {},
+        "schema": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/featureSchema"
             }
           ],
           "properties": {
@@ -228,7 +280,7 @@
       ],
       "additionalProperties": false
     },
-    "feature-action": {
+    "featureAction": {
       "allOf": [
         {
           "$ref": "#/definitions/feature"
@@ -242,7 +294,7 @@
         "schema": {
           "allOf": [
             {
-              "$ref": "#/definitions/feature-schema"
+              "$ref": "#/definitions/featureSchema"
             }
           ],
           "properties": {
@@ -280,7 +332,7 @@
       ],
       "additionalProperties": false
     },
-    "feature-dataElement": {
+    "featureDataElement": {
       "allOf": [
         {
           "$ref": "#/definitions/feature"
@@ -294,7 +346,7 @@
         "schema": {
           "allOf": [
             {
-              "$ref": "#/definitions/feature-schema"
+              "$ref": "#/definitions/featureSchema"
             }
           ],
           "properties": {
@@ -308,7 +360,7 @@
                     "properties": {
                       "$ref": {
                         "enum": [
-                          "https://assets.adobedtm.com/activation/reactor/schemas/1.0/extension-definitions-mobile.json#/definitions/data-element"
+                          "https://assets.adobedtm.com/activation/reactor/schemas/1.0/extension-definitions-mobile.json#/definitions/dataElement"
                         ]
                       }
                     },

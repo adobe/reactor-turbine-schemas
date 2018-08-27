@@ -46,27 +46,89 @@
   },
   "events": [
     {
-      "name": "test",
-      "categoryName": "test",
-      "displayName": "test",
-      "viewPath": "events/test.html",
+      "displayName": "Analytics Track Action Event",
+      "name": "analytics-track-action",
+      "viewPath": "events/track.action.html",
       "schema": {
         "$schema": "http://json-schema.org/draft-04/schema#",
         "type": "object",
         "allOf": [
           {
-            "$ref": "https://assets.adobedtm.com/activation/reactor/schemas/1.0/extension-definitions-mobile.json#/definitions/conditions"
+            "$ref": "https://assets.adobedtm.com/activation/reactor/schemas/1.0/extension-definitions-mobile.json#/definitions/eventConditions"
           }
         ],
         "properties": {
           "conditions": {
-            "properties": {
-              "definition": {
-                "values": {
-                  "items": {
-                    "pattern": "[A-z0-9_]*",
-                    "minimum": 1,
-                    "minLength": 1
+            "type": "array",
+            "items": [
+              {
+                "allOf": [
+                  {
+                    "$ref": "https://assets.adobedtm.com/activation/reactor/schemas/1.0/extension-definitions-mobile.json#/definitions/eventSourceCondition"
+                  }
+                ],
+                "properties": {
+                  "type": {},
+                  "definition": {
+                    "properties": {
+                      "key": {},
+                      "matcher": {},
+                      "values": {
+                        "items": [
+                          {
+                            "enum": [
+                              "com.adobe.eventSource.requestContent"
+                            ]
+                          }
+                        ]
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "allOf": [
+                  {
+                    "$ref": "https://assets.adobedtm.com/activation/reactor/schemas/1.0/extension-definitions-mobile.json#/definitions/eventTypeCondition"
+                  }
+                ],
+                "properties": {
+                  "type": {},
+                  "definition": {
+                    "properties": {
+                      "key": {},
+                      "matcher": {},
+                      "values": {
+                        "items": [
+                          {
+                            "enum": [
+                              "com.adobe.eventType.analytics"
+                            ]
+                          }
+                        ]
+                      }
+                    }
+                  }
+                }
+              }
+            ],
+            "additionalItems": {
+              "allOf": [
+                {
+                  "$ref": "https://assets.adobedtm.com/activation/reactor/schemas/1.0/extension-definitions-mobile.json#/definitions/eventAdditionalCondition"
+                }
+              ],
+              "properties": {
+                "type": {},
+                "definition": {
+                  "properties": {
+                    "key": {},
+                    "matcher": {},
+                    "values": {
+                      "items": {
+                        "pattern": "\\S+"
+                      }
+                    }
                   }
                 }
               }
@@ -95,10 +157,9 @@
   ],
   "actions": [
     {
-      "name": "test",
-      "categoryName": "test",
-      "displayName": "test",
-      "viewPath": "events/test.html",
+      "displayName": "Analytics Test Action",
+      "name": "an",
+      "viewPath": "actions/test.html",
       "schema": {
         "$schema": "http://json-schema.org/draft-04/schema#",
         "type": "object",
@@ -112,15 +173,23 @@
             "type": "object",
             "properties": {
               "action": {
-                "type": "string"
+                "$ref": "#/definitions/non-empty-string"
               },
               "state": {
-                "type": "string"
+                "$ref": "#/definitions/non-empty-string"
               },
               "contextData": {
                 "type": "object"
               }
-            }
+            },
+            "additionalProperties": false
+          }
+        },
+        "additionalProperties": false,
+        "definitions": {
+          "non-empty-string": {
+            "type": "string",
+            "pattern": "\\S+"
           }
         }
       }
@@ -137,7 +206,7 @@
         "type": "object",
         "allOf": [
           {
-            "$ref": "https://assets.adobedtm.com/activation/reactor/schemas/1.0/extension-definitions-mobile.json#/definitions/data-element"
+            "$ref": "https://assets.adobedtm.com/activation/reactor/schemas/1.0/extension-definitions-mobile.json#/definitions/dataElement"
           }
         ]
       }
