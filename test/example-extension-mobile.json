@@ -54,7 +54,7 @@
         "type": "object",
         "allOf": [
           {
-            "$ref": "https://assets.adobedtm.com/activation/reactor/schemas/1.0/extension-definitions-mobile.json#/definitions/event-conditions"
+            "$ref": "https://assets.adobedtm.com/activation/reactor/schemas/1.0/extension-definitions-mobile.json#/definitions/eventConditions"
           }
         ],
         "properties": {
@@ -64,7 +64,7 @@
               {
                 "allOf": [
                   {
-                    "$ref": "https://assets.adobedtm.com/activation/reactor/schemas/1.0/extension-definitions-mobile.json#/definitions/event-source-condition"
+                    "$ref": "https://assets.adobedtm.com/activation/reactor/schemas/1.0/extension-definitions-mobile.json#/definitions/eventSourceCondition"
                   }
                 ],
                 "properties": {
@@ -89,7 +89,7 @@
               {
                 "allOf": [
                   {
-                    "$ref": "https://assets.adobedtm.com/activation/reactor/schemas/1.0/extension-definitions-mobile.json#/definitions/event-type-condition"
+                    "$ref": "https://assets.adobedtm.com/activation/reactor/schemas/1.0/extension-definitions-mobile.json#/definitions/eventTypeCondition"
                   }
                 ],
                 "properties": {
@@ -115,7 +115,7 @@
             "additionalItems": {
               "allOf": [
                 {
-                  "$ref": "https://assets.adobedtm.com/activation/reactor/schemas/1.0/extension-definitions-mobile.json#/definitions/event-additional-condition"
+                  "$ref": "https://assets.adobedtm.com/activation/reactor/schemas/1.0/extension-definitions-mobile.json#/definitions/eventAdditionalCondition"
                 }
               ],
               "properties": {
@@ -206,7 +206,7 @@
         "type": "object",
         "allOf": [
           {
-            "$ref": "https://assets.adobedtm.com/activation/reactor/schemas/1.0/extension-definitions-mobile.json#/definitions/data-element"
+            "$ref": "https://assets.adobedtm.com/activation/reactor/schemas/1.0/extension-definitions-mobile.json#/definitions/dataElement"
           }
         ]
       }
