@@ -1,6 +1,6 @@
 {
   "name": "@adobe/reactor-turbine-schemas",
-  "version": "8.0.1",
+  "version": "8.0.2",
   "description": "Schemas for modeling related to Turbine.",
   "repository": {
     "type": "git",
