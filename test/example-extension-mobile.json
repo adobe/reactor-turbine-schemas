@@ -11,9 +11,7 @@
       "classNames": [
         "com.adobe.mobile.AdobeAnalytics"
       ],
-      "artifacts": [
-        "com.adobe.marketing.mobile:analytics:1.0.0"
-      ]
+      "artifact": "com.adobe.marketing.mobile:analytics:1.0.0"
     },
     {
       "name": "ACPAnalytics",
