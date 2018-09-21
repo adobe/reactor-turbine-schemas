@@ -164,7 +164,7 @@
               "$ref": "#/definitions/iosInterface"
             },
             "version": {
-              "$ref": "#/definitions/podVersion"
+              "$ref": "#/definitions/semver"
             }
           },
           "additionalProperties": false,
@@ -193,7 +193,7 @@
               }
             },
             "version": {
-              "$ref": "#/definitions/podVersion"
+              "$ref": "#/definitions/semver"
             }
           },
           "additionalProperties": false,
@@ -208,7 +208,7 @@
     },
     "mavenFQArtifactName": {
       "type": "string",
-      "pattern": "^[\\w\\.]+:[\\w\\.]+:(((\\(,)|\\[|\\])(?=.*((,\\))|\\]|\\[)$))?((\\d+\\.\\d+)((\\.\\d+)?(-[A-z]+)?)?(-\\d+)?,?)+(\\.?\\+$|\\]|\\[|,\\))?$"
+      "pattern": "^[\\w\\._]+:[\\w\\.-]+:(\\d+\\.\\d+((\\.\\d+)?(-[A-z]+)?)?(-\\d+)?)$"
     },
     "javaClassName": {
       "type": "string",
@@ -221,10 +221,6 @@
     "iosInterface": {
       "type": "string",
       "pattern": "^[\\w\\.]+$"
-    },
-    "podVersion": {
-      "type": "string",
-      "pattern": "^~?>?\\w?[0-9]+\\.[0-9]+(\\.[0-9]+)?$"
     },
     "featureSchema": {
       "type": "object",
