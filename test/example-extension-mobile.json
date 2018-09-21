@@ -8,14 +8,21 @@
   },
   "repositories": [
     {
-      "className": "com.adobe.mobile.AdobeAnalytics",
-      "groupId": "com.adobe.marketing.mobile",
-      "artifactId": "AdobeMobileSDKAnalytics",
-      "version": "[5.0,6.0)"
+      "classNames": [
+        "com.adobe.mobile.AdobeAnalytics"
+      ],
+      "artifacts": [
+        "com.adobe.marketing.mobile:analytics:1.0.0-Beta"
+      ]
     },
     {
-      "headerName": "ADBMobileMarketing/AdobeAnalytics.h",
-      "libraryName": "AdobeMobileSDKAnalytics",
+      "name": "ACPAnalytics",
+      "headerNames": [
+        "ADBMobileMarketing/AdobeAnalytics.h"
+      ],
+      "interfaces": [
+        "ACPAnalytics"
+      ],
       "version": "~>5.0"
     }
   ],
