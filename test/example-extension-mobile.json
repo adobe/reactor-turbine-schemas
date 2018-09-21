@@ -12,7 +12,7 @@
         "com.adobe.mobile.AdobeAnalytics"
       ],
       "artifacts": [
-        "com.adobe.marketing.mobile:analytics:1.0.0-Beta"
+        "com.adobe.marketing.mobile:analytics:1.0.0"
       ]
     },
     {
@@ -23,7 +23,7 @@
       "interfaces": [
         "ACPAnalytics"
       ],
-      "version": "~>5.0"
+      "version": "1.0.0"
     }
   ],
   "platform": "mobile",
