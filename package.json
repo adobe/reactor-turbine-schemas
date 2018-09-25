@@ -1,7 +1,7 @@
 {
   "name": "@adobe/reactor-turbine-schemas",
   "version": "8.0.2",
-  "description": "Schemas for modeling related to Turbine.",
+  "description": "A collection of schema used for validation of JSON objects within Launch.",
   "repository": {
     "type": "git",
     "url": "git@git.corp.adobe.com:reactor/turbine-schemas.git"
