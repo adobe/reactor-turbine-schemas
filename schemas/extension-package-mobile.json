@@ -42,9 +42,6 @@
     "viewBasePath": {
       "$ref": "#/definitions/basePath"
     },
-    "main": {
-      "$ref": "#/definitions/libPath"
-    },
     "exchangeUrl": {
       "type": "string",
       "minLength": 1,
@@ -463,11 +460,6 @@
       "type": "string",
       "minLength": 1,
       "pattern": "^(?!\\/)[\\/a-zA-Z_\\-\\s0-9\\.]+$"
-    },
-    "libPath": {
-      "type": "string",
-      "minLength": 1,
-      "pattern": "^(?!\\/)[\\/a-zA-Z_\\-\\s0-9\\.]+\\.js$"
     },
     "viewPath": {
       "type": "string",
