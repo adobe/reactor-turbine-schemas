@@ -173,6 +173,19 @@
         "additionalProperties": false
       }
     },
+    "company": {
+      "type": "object",
+      "properties": {
+        "orgId": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "[A-Z0-9]{24}@AdobeOrg"
+        }
+      },
+      "required": [
+        "orgId"
+      ]
+    },
     "property": {
       "type": "object",
       "properties": {
@@ -235,6 +248,7 @@
     }
   },
   "required": [
+    "company",
     "property",
     "buildInfo"
   ],
