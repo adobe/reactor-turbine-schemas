@@ -16,7 +16,7 @@
     {
       "name": "ACPAnalytics",
       "headerNames": [
-        "ADBMobileMarketing/AdobeAnalytics.h"
+        "AdobeAnalytics.h"
       ],
       "interfaces": [
         "ACPAnalytics"
