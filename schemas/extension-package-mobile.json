@@ -56,14 +56,19 @@
       ]
     },
     "repositories": {
-      "oneOf": [
-        {
-          "$ref": "#/definitions/iosOnlyPlatform"
-        },
-        {
-          "$ref": "#/definitions/allPlatforms"
-        }
-      ]
+      "type": "array",
+      "additionalItems": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/maven"
+          },
+          {
+            "$ref": "#/definitions/cocoapod"
+          }
+        ]
+      },
+      "minItems": 1,
+      "maxItems": 2
     },
     "events": {
       "type": "array",
@@ -102,31 +107,6 @@
     "repositories"
   ],
   "definitions": {
-    "iosOnlyPlatform": {
-      "type": "array",
-      "items": {
-        "allOf": [
-          {
-            "$ref": "#/definitions/cocoapod"
-          }
-        ]
-      },
-      "minItems": 1,
-      "maxItems": 1
-    },
-    "allPlatforms": {
-      "type": "array",
-      "items": [
-        {
-          "$ref": "#/definitions/maven"
-        },
-        {
-          "$ref": "#/definitions/cocoapod"
-        }
-      ],
-      "minItems": 1,
-      "maxItems": 2
-    },
     "maven": {
       "type": "object",
       "oneOf": [
