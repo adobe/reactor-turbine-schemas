@@ -24,6 +24,14 @@
 
 <!--- Are these changes time-sensitive? Is there an expected release date? -->
 
+## Would there be any problems if we released these changes immediately?
+
+<!--- Should we wait for some reason? -->
+
+## Do you foresee yourself proposing other known changes soon?
+
+<!-- Waiting for all known changes to be merged before deploying can reduce overhead. -->
+
 ## Do these changes need to be coordinated with changes in other repositories?
 
 <!--- Would there be any problem if these changes were released before/after related changes in other repositories? -->
