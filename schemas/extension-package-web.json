@@ -164,6 +164,24 @@
         }
       }
     },
+    "removeTransform": {
+      "properties": {
+        "type": {
+          "enum": [
+            "remove"
+          ]
+        },
+        "propertyPath": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "type",
+        "propertyPath"
+      ]
+    },
     "features": {
       "type": "array",
       "items": {
@@ -183,6 +201,9 @@
           },
           {
             "$ref": "#/definitions/customCodeTransform"
+          },
+          {
+            "$ref": "#/definitions/removeTransform"
           }
         ]
       }
