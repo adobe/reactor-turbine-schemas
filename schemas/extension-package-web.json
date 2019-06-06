@@ -255,8 +255,12 @@
         },
         "schema": {
           "type": "object"
+        },
+        "transforms": {
+          "$ref": "#/definitions/transforms"
         }
       },
+      "additionalProperties": false,
       "required": [
         "viewPath",
         "schema"
