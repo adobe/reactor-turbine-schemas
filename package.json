@@ -11,6 +11,7 @@
     "url": "http://adobe.com",
     "email": "reactor@adobe.com"
   },
+  "license": "Apache-2.0",
   "devDependencies": {
     "ajv": "^6.5.0"
   },
