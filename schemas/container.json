@@ -52,7 +52,7 @@
                 "negate": {
                   "type": "boolean"
                 },
-                "sequence_timeout" : {
+                "timeout": {
                   "type": "number"
                 }
               },
@@ -73,7 +73,7 @@
                 "settings": {
                   "type": "object"
                 },
-                "sequence_timeout" : {
+                "timeout": {
                   "type": "number"
                 }
               },
@@ -213,7 +213,7 @@
               },
               "uniqueItems": true
             },
-            "ruleComponentSequencing": {
+            "sequencingEnabled": {
               "type": "boolean"
             }
           },
