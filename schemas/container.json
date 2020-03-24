@@ -213,7 +213,7 @@
               },
               "uniqueItems": true
             },
-            "sequencingEnabled": {
+            "ruleComponentSequencing": {
               "type": "boolean"
             }
           },
