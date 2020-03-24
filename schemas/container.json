@@ -51,6 +51,9 @@
                 },
                 "negate": {
                   "type": "boolean"
+                },
+                "sequence_timeout" : {
+                  "type": "number"
                 }
               },
               "required": [
@@ -69,6 +72,9 @@
                 },
                 "settings": {
                   "type": "object"
+                },
+                "sequence_timeout" : {
+                  "type": "number"
                 }
               },
               "required": [
@@ -206,6 +212,9 @@
                 "pattern": "^((?=[a-z0-9-_]{1,63}\\.)(xn--)?[a-z0-9_]+(-[a-z0-9_]+)*\\.)+[a-z]{2,63}$"
               },
               "uniqueItems": true
+            },
+            "ruleComponentSequencing": {
+              "type": "boolean"
             }
           },
           "required": [

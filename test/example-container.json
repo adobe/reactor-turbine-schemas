@@ -12,7 +12,8 @@
     "name": "test property",
     "settings": {
       "undefinedVarsReturnEmpty": true,
-      "domains": ["test.com"]
+      "domains": ["test.com"],
+      "ruleComponentSequencing": true
     }
   }
 }
