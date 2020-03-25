@@ -51,6 +51,10 @@
                 },
                 "negate": {
                   "type": "boolean"
+                },
+                "timeout": {
+                  "type": "number",
+                  "minimum": 0
                 }
               },
               "required": [
@@ -69,6 +73,10 @@
                 },
                 "settings": {
                   "type": "object"
+                },
+                "timeout": {
+                  "type": "number",
+                  "minimum": 0
                 }
               },
               "required": [
@@ -206,11 +214,15 @@
                 "pattern": "^((?=[a-z0-9-_]{1,63}\\.)(xn--)?[a-z0-9_]+(-[a-z0-9_]+)*\\.)+[a-z]{2,63}$"
               },
               "uniqueItems": true
+            },
+            "ruleComponentSequencing": {
+              "type": "boolean"
             }
           },
           "required": [
             "undefinedVarsReturnEmpty",
-            "domains"
+            "domains",
+            "ruleComponentSequencing"
           ],
           "additionalProperties": false
         }
