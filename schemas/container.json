@@ -215,14 +215,14 @@
               },
               "uniqueItems": true
             },
-            "ruleComponentSequencing": {
+            "ruleComponentSequencingEnabled": {
               "type": "boolean"
             }
           },
           "required": [
             "undefinedVarsReturnEmpty",
             "domains",
-            "ruleComponentSequencing"
+            "ruleComponentSequencingEnabled"
           ],
           "additionalProperties": false
         }
