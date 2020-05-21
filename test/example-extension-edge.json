@@ -39,6 +39,30 @@
       }
     }
   ],
+  "conditions": [
+    {
+      "name": "test-condition",
+      "displayName": "Test Condition",
+      "libPath": "src/lib/conditions/testCondition.js",
+      "viewPath": "testCondition.html",
+      "schema": {
+        "$schema": "http://json-schema.org/draft-04/schema#",
+        "type": "object"
+      }
+    }
+  ],
+  "dataElements": [
+    {
+      "name": "test-data-element",
+      "displayName": "Test Data Element",
+      "libPath": "src/lib/dataElements/testDataElement.js",
+      "viewPath": "testDataElement.html",
+      "schema": {
+        "$schema": "http://json-schema.org/draft-04/schema#",
+        "type": "object"
+      }
+    }
+  ],
   "sharedModules": [
     {
       "name": "test-shared",
