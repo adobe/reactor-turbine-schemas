@@ -1,0 +1,48 @@
+{
+  "name": "test-edge",
+  "version": "1.0.0",
+  "displayName": "Test edge",
+  "description": "Test edge is just a test.",
+  "iconPath": "resources/icons/edge.svg",
+  "author": {
+    "name": "Adobe Systems",
+    "url": "http://adobe.com",
+    "email": "reactor@adobe.com"
+  },
+  "viewBasePath": "dist/",
+  "platform": "edge",
+  "configuration": {
+    "viewPath": "extensionConfiguration.html",
+    "schema": {
+      "$schema": "http://json-schema.org/draft-04/schema#",
+      "type": "object",
+      "properties": {
+        "accounts": {
+          "$ref": "#/definitions/test"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "accounts"
+      ]
+    }
+  },
+  "actions": [
+    {
+      "name": "test-action",
+      "displayName": "Test Action",
+      "libPath": "src/lib/actions/testAction.js",
+      "viewPath": "testAction.html",
+      "schema": {
+        "$schema": "http://json-schema.org/draft-04/schema#",
+        "type": "object"
+      }
+    }
+  ],
+  "sharedModules": [
+    {
+      "name": "test-shared",
+      "libPath": "src/lib/sharedModules/testShared.js"
+    }
+  ]
+}
