@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "$id": "http://launch.adobe.com/schemas/extension-package-server.json",
+  "$id": "http://launch.adobe.com/schemas/extension-package-edge.json",
   "properties": {
     "name": {
       "$ref": "#/definitions/name"
@@ -39,7 +39,7 @@
     },
     "platform": {
       "enum": [
-        "server"
+        "edge"
       ]
     },
     "conditions": {
