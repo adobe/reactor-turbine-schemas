@@ -53,7 +53,7 @@
                   "type": "boolean"
                 },
                 "timeout": {
-                  "type": "number",
+                  "type": "integer",
                   "minimum": 0
                 }
               },
@@ -75,8 +75,11 @@
                   "type": "object"
                 },
                 "timeout": {
-                  "type": "number",
+                  "type": "integer",
                   "minimum": 0
+                },
+                "delayNext": {
+                  "type": "boolean"
                 }
               },
               "required": [
