@@ -103,24 +103,6 @@
         "name"
       ]
     },
-    "fileTransform": {
-      "properties": {
-        "type": {
-          "enum": [
-            "file"
-          ]
-        },
-        "propertyPath": {
-          "type": "string",
-          "minLength": 1
-        }
-      },
-      "additionalProperties": false,
-      "required": [
-        "type",
-        "propertyPath"
-      ]
-    },
     "functionTransform": {
       "properties": {
         "type": {
@@ -145,15 +127,6 @@
         "type",
         "propertyPath"
       ]
-    },
-    "customCodeTransform": {
-      "properties": {
-        "type": {
-          "enum": [
-            "customCode"
-          ]
-        }
-      }
     },
     "removeTransform": {
       "properties": {
@@ -186,6 +159,9 @@
         "oneOf": [
           {
             "$ref": "#/definitions/functionTransform"
+          },
+          {
+            "$ref": "#/definitions/removeTransform"
           }
         ]
       }
