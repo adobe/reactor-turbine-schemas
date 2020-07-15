@@ -31,8 +31,7 @@
     },
     "exchangeUrl": {
       "type": "string",
-      "minLength": 1,
-      "pattern": "^https:\\/\\/(?:(?:experiencecloud|www)\\.)?adobeexchange\\.com"
+      "format": "uri"
     },
     "configuration": {
       "$ref": "#/definitions/configuration"
