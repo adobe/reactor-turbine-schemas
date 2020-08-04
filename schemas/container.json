@@ -7,22 +7,25 @@
       "items": {
         "type": "object",
         "properties": {
-          "name": {
-            "type": "string",
-            "minLength": 1
-          },
           "id": {
             "type": "string",
             "minLength": 1,
             "pattern": "RL[a-zA-Z0-9]{32}"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1
           },
           "events": {
             "type": "array",
             "items": {
               "type": "object",
               "properties": {
-                "modulePath": {
-                  "$ref": "#/definitions/modulePath"
+                "delegateName": {
+                  "$ref": "#/definitions/name"
+                },
+                "extensionName": {
+                  "$ref": "#/definitions/name"
                 },
                 "ruleOrder": {
                   "type": "number"
@@ -32,7 +35,8 @@
                 }
               },
               "required": [
-                "modulePath",
+                "delegateName",
+                "extensionName",
                 "ruleOrder"
               ],
               "additionalProperties": false
@@ -43,8 +47,11 @@
             "items": {
               "type": "object",
               "properties": {
-                "modulePath": {
-                  "$ref": "#/definitions/modulePath"
+                "delegateName": {
+                  "$ref": "#/definitions/name"
+                },
+                "extensionName": {
+                  "$ref": "#/definitions/name"
                 },
                 "settings": {
                   "type": "object"
@@ -58,7 +65,8 @@
                 }
               },
               "required": [
-                "modulePath"
+                "delegateName",
+                "extensionName"
               ],
               "additionalProperties": false
             }
@@ -68,8 +76,11 @@
             "items": {
               "type": "object",
               "properties": {
-                "modulePath": {
-                  "$ref": "#/definitions/modulePath"
+                "delegateName": {
+                  "$ref": "#/definitions/name"
+                },
+                "extensionName": {
+                  "$ref": "#/definitions/name"
                 },
                 "settings": {
                   "type": "object"
@@ -83,7 +94,8 @@
                 }
               },
               "required": [
-                "modulePath"
+                "delegateName",
+                "extensionName"
               ],
               "additionalProperties": false
             }
@@ -102,8 +114,11 @@
         "^[^%]+$": {
           "type": "object",
           "properties": {
-            "modulePath": {
-              "$ref": "#/definitions/modulePath"
+            "delegateName": {
+              "$ref": "#/definitions/name"
+            },
+            "extensionName": {
+              "$ref": "#/definitions/name"
             },
             "settings": {
               "type": "object"
@@ -126,7 +141,8 @@
             }
           },
           "required": [
-            "modulePath"
+            "delegateName",
+            "extensionName"
           ],
           "additionalProperties": false
         }
@@ -148,34 +164,6 @@
           },
           "settings": {
             "type": "object"
-          },
-          "modules": {
-            "type": "object",
-            "patternProperties": {
-              "^[^\\/].*\\/.*\\.js$": {
-                "type": "object",
-                "properties": {
-                  "name": {
-                    "type": "string",
-                    "minLength": 1,
-                    "pattern": "^(?![_\\.])[a-z0-9~_\\-\\.]{1,214}$"
-                  },
-                  "displayName": {
-                    "type": "string",
-                    "minLength": 1
-                  },
-                  "shared": {
-                    "type": "boolean"
-                  },
-                  "script": {}
-                },
-                "required": [
-                  "script"
-                ],
-                "additionalProperties": false
-              }
-            },
-            "additionalProperties": false
           }
         },
         "required": [
@@ -269,9 +257,10 @@
   ],
   "additionalProperties": false,
   "definitions": {
-    "modulePath": {
+    "name": {
       "type": "string",
-      "pattern": "^[^\\/].*\\/.*\\.js$"
+      "minLength": 1,
+      "pattern": "^(?![_\\.])[a-z0-9~_\\-\\.]{1,214}$"
     },
     "semver": {
       "type": "string",
