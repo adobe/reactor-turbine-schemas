@@ -6,7 +6,7 @@ name: Node.js Package
 
 on:
   release:
-    types: [created]
+    types: [published]
 
 jobs:
   publish-npm:
@@ -20,4 +20,3 @@ jobs:
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.ADOBE_BOT_NPM_TOKEN}}
-
