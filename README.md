@@ -12,7 +12,7 @@ A schema describing the "container" output for [Turbine](https://github.com/Adob
 
 ### extension-package-web.json
 
-A schema describing the `extension.json` found in a web extension package. The `extension.json` file describes the contents of an extension. More information can be found on the [extension development guide](https://developer.adobelaunch.com/guides/extensions/extension-manifest/).
+A schema describing the `extension.json` found in a web extension package. The `extension.json` file describes the contents of an extension. More information can be found on the [extension development guide](https://experienceleague.adobe.com/docs/launch/using/extension-dev/overview.html#extension-dev).
 
 ### extension-package-mobile.json
 
@@ -33,7 +33,7 @@ To get started:
 To run tests a single time, run the following command:
 
 `npm run test`
- 
+
 ## Licensing
 
 This project is licensed under the Apache V2 License. See [LICENSE](LICENSE) for more information.
