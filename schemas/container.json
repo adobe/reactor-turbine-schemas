@@ -167,7 +167,14 @@
                   "shared": {
                     "type": "boolean"
                   },
-                  "script": {}
+                  "script": {},
+                  "filePaths": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "uniqueItems": true
+                  }
                 },
                 "required": [
                   "script"
@@ -190,6 +197,10 @@
         "orgId": {
           "type": "string",
           "pattern": "[a-zA-Z0-9]{24}@AdobeOrg"
+        },
+        "cdnAllowList": {
+          "type": "string",
+          "pattern": "^((?=[a-z0-9-_]{1,63}\\.)(xn--)?[a-z0-9_]+(-[a-z0-9_]+)*\\.)+[a-z]{2,63}$"
         }
       },
       "required": [
