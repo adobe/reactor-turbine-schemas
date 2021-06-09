@@ -199,8 +199,11 @@
           "pattern": "[a-zA-Z0-9]{24}@AdobeOrg"
         },
         "cdnAllowList": {
-          "type": "string",
-          "pattern": "^((?=[a-z0-9-_]{1,63}\\.)(xn--)?[a-z0-9_]+(-[a-z0-9_]+)*\\.)+[a-z]{2,63}$"
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^((?=[a-z0-9-_]{1,63}\\.)(xn--)?[a-z0-9_]+(-[a-z0-9_]+)*\\.)+[a-z]{2,63}$"
+          }
         }
       },
       "required": [
@@ -239,11 +242,17 @@
             "ruleComponentSequencingEnabled"
           ],
           "additionalProperties": false
+        },
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "PR[a-zA-Z0-9]{32}"
         }
       },
       "required": [
         "name",
-        "settings"
+        "settings",
+        "id"
       ],
       "additionalProperties": false
     },
@@ -262,13 +271,19 @@
         "environment": {
           "type": "string",
           "minLength": 1
+        },
+        "environmentId": {
+          "type": "string",
+          "pattern": "EN[a-zA-Z0-9]{32}",
+          "minLength": 1
         }
       },
       "required": [
         "turbineVersion",
         "turbineBuildDate",
         "buildDate",
-        "environment"
+        "environment",
+        "environmentId"
       ],
       "additionalProperties": false
     }
