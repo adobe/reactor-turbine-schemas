@@ -149,6 +149,13 @@
           "settings": {
             "type": "object"
           },
+          "filePaths": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "uniqueItems": true
+          },
           "modules": {
             "type": "object",
             "patternProperties": {
