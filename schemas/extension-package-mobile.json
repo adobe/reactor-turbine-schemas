@@ -67,7 +67,7 @@
         ]
       },
       "minItems": 1,
-      "maxItems": 2
+      "maxItems": 3
     },
     "events": {
       "type": "array",
@@ -163,7 +163,6 @@
               "$ref": "#/definitions/podVersion"
             }
           },
-          "additionalProperties": false,
           "required": [
             "name",
             "headerName",
@@ -194,7 +193,6 @@
               "$ref": "#/definitions/podVersion"
             }
           },
-          "additionalProperties": false,
           "required": [
             "name",
             "headerNames",
@@ -214,7 +212,7 @@
     },
     "iosHeaderName": {
       "type": "string",
-      "pattern": "^[a-zA-Z_][a-zA-Z\\d_]*\\/?[a-zA-Z_][a-zA-Z\\d_]*\\.[a-zA-Z]$"
+      "pattern": "^[a-zA-Z_][a-zA-Z\\d_]*\\/?[a-zA-Z_][a-zA-Z\\d_]*(\\.[a-zA-Z])?$"
     },
     "iosInterface": {
       "type": "string",
