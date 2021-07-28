@@ -56,7 +56,7 @@
     },
     "repositories": {
       "type": "array",
-      "additionalItems": {
+      "items": {
         "oneOf": [
           {
             "$ref": "#/definitions/maven"
@@ -161,8 +161,12 @@
             },
             "version": {
               "$ref": "#/definitions/podVersion"
+            },
+            "core": {
+              "$ref": "#/definitions/podVersion"
             }
           },
+          "additionalProperties": false,
           "required": [
             "name",
             "headerName",
@@ -191,8 +195,12 @@
             },
             "version": {
               "$ref": "#/definitions/podVersion"
+            },
+            "core": {
+              "$ref": "#/definitions/podVersion"
             }
           },
+          "additionalProperties": false,
           "required": [
             "name",
             "headerNames",

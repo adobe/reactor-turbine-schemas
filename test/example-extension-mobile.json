@@ -32,7 +32,7 @@
         "ACPAnalytics"
       ],
       "version": "1.0.0",
-      "core": "v3"
+      "core": "3.0.0"
     }
   ],
   "platform": "mobile",
