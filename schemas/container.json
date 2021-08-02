@@ -154,7 +154,8 @@
             "items": {
               "type": "string"
             },
-            "uniqueItems": true
+            "uniqueItems": true,
+            "minLength": 1
           },
           "modules": {
             "type": "object",
@@ -180,7 +181,8 @@
                     "items": {
                       "type": "string"
                     },
-                    "uniqueItems": true
+                    "uniqueItems": true,
+                    "minLength": 1
                   }
                 },
                 "required": [
@@ -274,25 +276,32 @@
         },
         "buildDate": {
           "format": "date-time"
-        },
-        "environment": {
-          "type": "string",
-          "minLength": 1
-        },
-        "environmentId": {
-          "type": "string",
-          "pattern": "EN[a-zA-Z0-9]{32}",
-          "minLength": 1
         }
       },
       "required": [
         "turbineVersion",
         "turbineBuildDate",
-        "buildDate",
-        "environment",
-        "environmentId"
+        "buildDate"
       ],
       "additionalProperties": false
+    },
+    "environment": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "EN[a-zA-Z0-9]{32}",
+          "minLength": 1
+        },
+        "stage": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "id",
+        "stage"
+      ]
     }
   },
   "required": [
