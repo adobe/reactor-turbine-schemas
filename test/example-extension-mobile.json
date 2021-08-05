@@ -24,14 +24,17 @@
       "version": "1.0.0"
     },
     {
-      "name": "ACPAnalytics",
+      "name": "AEPAnalytics",
       "headerNames": [
-        "AdobeAnalytics"
+        "AEPAnalytics"
       ],
       "interfaces": [
-        "ACPAnalytics"
+        "Analytics"
       ],
-      "version": "1.0.0",
+      "objcInterfaces": [
+        "AEPMobileAnalytics"
+      ],
+      "version": "3.0.0",
       "core": "3.0.0"
     }
   ],
