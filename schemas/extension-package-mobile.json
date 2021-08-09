@@ -159,7 +159,7 @@
             "interface": {
               "$ref": "#/definitions/iosInterface"
             },
-            "interfaceObjc": {
+            "objcInterface": {
               "$ref": "#/definitions/iosInterface"
             },
             "version": {
@@ -196,7 +196,7 @@
               },
               "minItems": 1
             },
-            "interfacesObjc": {
+            "objcInterfaces": {
               "type": "array",
               "items": {
                 "$ref": "#/definitions/iosInterface"
