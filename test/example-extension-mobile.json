@@ -31,11 +31,11 @@
       "interfaces": [
         "Analytics"
       ],
-      "objcInterfaces": [
+      "interfacesObjc": [
         "AEPMobileAnalytics"
       ],
       "version": "3.0.0",
-      "core": "3.0.0"
+      "coreVersion": "3.0.0"
     }
   ],
   "platform": "mobile",

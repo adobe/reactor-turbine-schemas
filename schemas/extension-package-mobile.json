@@ -159,13 +159,13 @@
             "interface": {
               "$ref": "#/definitions/iosInterface"
             },
-            "objcInterface": {
+            "interfaceObjc": {
               "$ref": "#/definitions/iosInterface"
             },
             "version": {
               "$ref": "#/definitions/podVersion"
             },
-            "core": {
+            "coreVersion": {
               "$ref": "#/definitions/podVersion"
             }
           },
@@ -196,7 +196,7 @@
               },
               "minItems": 1
             },
-            "objcInterfaces": {
+            "interfacesObjc": {
               "type": "array",
               "items": {
                 "$ref": "#/definitions/iosInterface"
@@ -206,7 +206,7 @@
             "version": {
               "$ref": "#/definitions/podVersion"
             },
-            "core": {
+            "coreVersion": {
               "$ref": "#/definitions/podVersion"
             }
           },
