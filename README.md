@@ -1,14 +1,14 @@
 # @adobe/reactor-turbine-schemas
 
-Launch, by Adobe, is a next-generation tag management solution enabling simplified deployment of marketing technologies. For more information regarding Launch, please visit our [product website](http://www.adobe.com/enterprise/cloud-platform/launch.html).
+Experience Platform Tags, by Adobe, is a next-generation tag management solution enabling simplified deployment of marketing technologies. For more information regarding Experience Platform Tags, please visit our [product website](http://www.adobe.com/enterprise/cloud-platform/launch.html).
 
-This project is a collection of schemas based on the [JSON Schema vocabulary](https://json-schema.org/) that are used for validation of JSON objects within Launch. The schemas are not intended to be used directly by consumers; they are used by the Launch system and extension development tools.
+This project is a collection of schemas based on the [JSON Schema vocabulary](https://json-schema.org/) that are used for validation of JSON objects within Experience Platform Tags. The schemas are not intended to be used directly by consumers; they are used by the Experience Platform Tags system and extension development tools.
 
 ## Available Schemas
 
 ### container.json
 
-A schema describing the "container" output for [Turbine](https://github.com/Adobe-Marketing-Cloud/reactor-turbine) (the Launch rule engine). The container object contains configuration specific to a Launch property. Turbine uses the container as instruction on how to behave when running on a client website.
+A schema describing the "container" output for [Turbine (Web)](https://github.com/adobe/reactor-turbine) (the Experience Platform Tags rule engine). The container object contains configuration specific to an Experience Platform Tags property. Turbine uses the container as instruction on how to behave when running on a client website.
 
 ### extension-package-web.json
 
