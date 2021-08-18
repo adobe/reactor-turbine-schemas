@@ -14,16 +14,6 @@
       "artifact": "com.adobe.marketing.mobile:analytics:1.0.0"
     },
     {
-      "name": "ACPAnalytics",
-      "headerNames": [
-        "AdobeAnalytics.h"
-      ],
-      "interfaces": [
-        "ACPAnalytics"
-      ],
-      "version": "1.0.0"
-    },
-    {
       "name": "AEPAnalytics",
       "headerNames": [
         "AEPAnalytics"
