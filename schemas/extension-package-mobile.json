@@ -67,7 +67,7 @@
         ]
       },
       "minItems": 1,
-      "maxItems": 3
+      "maxItems": 2
     },
     "events": {
       "type": "array",
@@ -159,10 +159,13 @@
             "interface": {
               "$ref": "#/definitions/iosInterface"
             },
+            "objcInterface": {
+              "$ref": "#/definitions/iosInterface"
+            },
             "version": {
               "$ref": "#/definitions/podVersion"
             },
-            "core": {
+            "coreVersion": {
               "$ref": "#/definitions/podVersion"
             }
           },
@@ -193,10 +196,17 @@
               },
               "minItems": 1
             },
+            "objcInterfaces": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/iosInterface"
+              },
+              "minItems": 1
+            },
             "version": {
               "$ref": "#/definitions/podVersion"
             },
-            "core": {
+            "coreVersion": {
               "$ref": "#/definitions/podVersion"
             }
           },
