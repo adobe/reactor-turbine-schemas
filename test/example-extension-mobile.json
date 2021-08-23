@@ -14,18 +14,25 @@
       "artifact": "com.adobe.marketing.mobile:analytics:1.0.0"
     },
     {
-      "name": "AEPAnalytics",
+      "name": "ACPAnalytics",
       "headerNames": [
-        "AEPAnalytics"
+        "AdobeAnalytics.h"
       ],
       "interfaces": [
-        "Analytics"
+        "ACPAnalytics"
       ],
-      "objcInterfaces": [
-        "AEPMobileAnalytics"
+      "version": "1.0.0"
+    },
+    {
+      "name": "ACPAnalytics",
+      "headerNames": [
+        "AdobeAnalytics"
       ],
-      "version": "3.0.0",
-      "coreVersion": "3.0.0"
+      "interfaces": [
+        "ACPAnalytics"
+      ],
+      "version": "1.0.0",
+      "core": "3.0.0"
     }
   ],
   "platform": "mobile",
