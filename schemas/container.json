@@ -149,6 +149,14 @@
           "settings": {
             "type": "object"
           },
+          "filePaths": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "uniqueItems": true,
+            "minLength": 1
+          },
           "modules": {
             "type": "object",
             "patternProperties": {
@@ -167,7 +175,15 @@
                   "shared": {
                     "type": "boolean"
                   },
-                  "script": {}
+                  "script": {},
+                  "filePaths": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "uniqueItems": true,
+                    "minLength": 1
+                  }
                 },
                 "required": [
                   "script"
@@ -190,6 +206,13 @@
         "orgId": {
           "type": "string",
           "pattern": "[a-zA-Z0-9]{24}@AdobeOrg"
+        },
+        "cdnAllowList": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^((?=[a-z0-9-_]{1,63}\\.)(xn--)?[a-z0-9_]+(-[a-z0-9_]+)*\\.)+[a-z]{2,63}$"
+          }
         }
       },
       "required": [
@@ -228,11 +251,17 @@
             "ruleComponentSequencingEnabled"
           ],
           "additionalProperties": false
+        },
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "PR[a-zA-Z0-9]{32}"
         }
       },
       "required": [
         "name",
-        "settings"
+        "settings",
+        "id"
       ],
       "additionalProperties": false
     },
@@ -247,19 +276,32 @@
         },
         "buildDate": {
           "format": "date-time"
-        },
-        "environment": {
-          "type": "string",
-          "minLength": 1
         }
       },
       "required": [
         "turbineVersion",
         "turbineBuildDate",
-        "buildDate",
-        "environment"
+        "buildDate"
       ],
       "additionalProperties": false
+    },
+    "environment": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "EN[a-zA-Z0-9]{32}",
+          "minLength": 1
+        },
+        "stage": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "id",
+        "stage"
+      ]
     }
   },
   "required": [
