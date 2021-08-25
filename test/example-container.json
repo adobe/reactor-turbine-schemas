@@ -1,7 +1,6 @@
 {
   "buildInfo": {
     "buildDate": "2018-11-28T20:30:39Z",
-    "environment": "production",
     "turbineBuildDate": "2018-11-07T23:14:07Z",
     "turbineVersion": "25.2.2"
   },
@@ -9,6 +8,7 @@
     "orgId": "26591225524DD8160A490D4D@AdobeOrg"
   },
   "property": {
+    "id": "PR12345678901234567890123456789012",
     "name": "test property",
     "settings": {
       "undefinedVarsReturnEmpty": true,
