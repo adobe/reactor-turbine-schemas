@@ -23,7 +23,7 @@ const mobileExample = require('./example-extension-mobile.json');
 const webExample = require('./example-extension-web.json');
 const containerExample = require('./example-container.json');
 
-const ajv = new Ajv({schemaId: 'auto'});
+const ajv = new Ajv({ schemaId: 'auto' });
 ajv.addMetaSchema(require('ajv/lib/refs/json-schema-draft-04.json'));
 // ajv.addSchema(baseSchema)
 
@@ -51,4 +51,7 @@ if (!containerIsValid) {
 }
 if (edgeIsValid && mobileIsValid && webIsValid && containerIsValid) {
   console.log('VALID!');
+  process.exit(0);
 }
+
+process.exit(1);
