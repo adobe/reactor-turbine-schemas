@@ -219,7 +219,8 @@
         }
       },
       "required": [
-        "orgId"
+        "orgId",
+        "dynamicCdnEnabled"
       ],
       "additionalProperties": false
     },

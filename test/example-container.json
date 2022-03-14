@@ -5,7 +5,8 @@
     "turbineVersion": "25.2.2"
   },
   "company": {
-    "orgId": "26591225524DD8160A490D4D@AdobeOrg"
+    "orgId": "26591225524DD8160A490D4D@AdobeOrg",
+    "dynamicCdnEnabled": false
   },
   "property": {
     "id": "PR12345678901234567890123456789012",
