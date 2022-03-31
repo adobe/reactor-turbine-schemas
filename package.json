@@ -13,7 +13,7 @@
   },
   "license": "Apache-2.0",
   "devDependencies": {
-    "ajv": "^6.5.0"
+    "ajv": "^6.12.6"
   },
   "scripts": {
     "test": "node test/index.js"
