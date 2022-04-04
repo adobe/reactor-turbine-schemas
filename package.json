@@ -1,6 +1,6 @@
 {
   "name": "@adobe/reactor-turbine-schemas",
-  "version": "10.2.0-beta.china-cdn.1",
+  "version": "10.2.0",
   "description": "A collection of schema used for validation of JSON objects within Launch.",
   "repository": {
     "type": "git",
