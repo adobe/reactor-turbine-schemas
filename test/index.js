@@ -10,7 +10,8 @@ OF ANY KIND, either express or implied. See the License for the specific languag
 governing permissions and limitations under the License.
 */
 
-const Ajv = require('ajv');
+const Ajv = require("ajv-draft-04")
+const addAJVFormats = require("ajv-formats")
 
 // const baseSchema = require('../schemas/extension-package.json');
 const edgeSchema = require('../schemas/extension-package-edge.json');
@@ -23,8 +24,11 @@ const mobileExample = require('./example-extension-mobile.json');
 const webExample = require('./example-extension-web.json');
 const containerExample = require('./example-container.json');
 
-const ajv = new Ajv({ schemaId: 'auto' });
-ajv.addMetaSchema(require('ajv/lib/refs/json-schema-draft-04.json'));
+const ajv = new Ajv({
+  schemaId: 'auto',
+  strict: false
+});
+addAJVFormats(ajv);
 // ajv.addSchema(baseSchema)
 
 const edgeValidate = ajv.compile(edgeSchema);
