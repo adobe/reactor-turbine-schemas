@@ -110,6 +110,7 @@
       "type": "object",
       "oneOf": [
         {
+          "type": "object",
           "properties": {
             "className": {
               "$ref": "#/definitions/javaClassName"
@@ -125,6 +126,7 @@
           ]
         },
         {
+          "type": "object",
           "properties": {
             "classNames": {
               "type": "array",
@@ -149,6 +151,7 @@
       "type": "object",
       "oneOf": [
         {
+          "type": "object",
           "properties": {
             "name": {
               "type": "string"
@@ -178,6 +181,7 @@
           ]
         },
         {
+          "type": "object",
           "properties": {
             "name": {
               "type": "string"
@@ -258,6 +262,7 @@
       ]
     },
     "featureEvent": {
+      "type": "object",
       "allOf": [
         {
           "$ref": "#/definitions/feature"
@@ -269,6 +274,7 @@
         "displayName": {},
         "viewPath": {},
         "schema": {
+          "type": "object",
           "allOf": [
             {
               "$ref": "#/definitions/featureSchema"
@@ -310,6 +316,7 @@
       "additionalProperties": false
     },
     "featureConditions": {
+      "type": "object",
       "allOf": [
         {
           "$ref": "#/definitions/feature"
@@ -321,6 +328,7 @@
         "displayName": {},
         "viewPath": {},
         "schema": {
+          "type": "object",
           "allOf": [
             {
               "$ref": "#/definitions/featureSchema"
@@ -362,6 +370,7 @@
       "additionalProperties": false
     },
     "featureAction": {
+      "type": "object",
       "allOf": [
         {
           "$ref": "#/definitions/feature"
@@ -373,6 +382,7 @@
         "displayName": {},
         "viewPath": {},
         "schema": {
+          "type": "object",
           "allOf": [
             {
               "$ref": "#/definitions/featureSchema"
@@ -414,6 +424,7 @@
       "additionalProperties": false
     },
     "featureDataElement": {
+      "type": "object",
       "allOf": [
         {
           "$ref": "#/definitions/feature"
@@ -425,6 +436,7 @@
         "displayName": {},
         "viewPath": {},
         "schema": {
+          "type": "object",
           "allOf": [
             {
               "$ref": "#/definitions/featureSchema"
