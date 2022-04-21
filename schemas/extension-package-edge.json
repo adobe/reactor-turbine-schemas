@@ -1,6 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "$id": "http://launch.adobe.com/schemas/extension-package-edge.json",
+  "type": "object",
   "properties": {
     "name": {
       "$ref": "#/definitions/name"
@@ -103,6 +104,7 @@
       ]
     },
     "functionTransform": {
+      "type": "object",
       "properties": {
         "type": {
           "enum": [
@@ -128,6 +130,7 @@
       ]
     },
     "removeTransform": {
+      "type": "object",
       "properties": {
         "type": {
           "enum": [
