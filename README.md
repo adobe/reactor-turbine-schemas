@@ -1,14 +1,14 @@
 # @adobe/reactor-turbine-schemas
 
-Experience Platform Tags, by Adobe, is a next-generation tag management solution enabling simplified deployment of marketing technologies. For more information regarding Experience Platform Tags, please visit our [product website](http://www.adobe.com/enterprise/cloud-platform/launch.html).
+Adobe Experience Platform Tags is a next-generation tag management solution enabling simplified deployment of marketing technologies. For more information regarding Tags, please visit our [product website](http://www.adobe.com/enterprise/cloud-platform/launch.html).
 
-This project is a collection of schemas based on the [JSON Schema vocabulary](https://json-schema.org/) that are used for validation of JSON objects within Experience Platform Tags. The schemas are not intended to be used directly by consumers; they are used by the Experience Platform Tags system and extension development tools.
+This project is a collection of schemas based on the [JSON Schema vocabulary](https://json-schema.org/) that are used for validation of JSON objects within Tags. The schemas are not intended to be used directly by consumers; they are used by the Tags system and extension development tools.
 
 ## Available Schemas
 
 ### container.json
 
-A schema describing the "container" output for [Turbine (Web)](https://github.com/adobe/reactor-turbine) (the Experience Platform Tags rule engine). The container object contains configuration specific to an Experience Platform Tags property. Turbine uses the container as instruction on how to behave when running on a client website.
+A schema describing the "container" output for [Turbine (Web)](https://github.com/adobe/reactor-turbine) (the Experience Platform Tags rule engine). The container object contains configuration specific to a Platform Tags property. Turbine uses the container as instruction on how to behave when running on a client website.
 
 ### extension-package-web.json
 
@@ -16,7 +16,7 @@ A schema describing the `extension.json` found in a web extension package. The `
 
 ### extension-package-mobile.json
 
-A schema describing the `extension.json` found in a web extension package. The `extension.json` file describes the contents of an extension.
+A schema describing the `extension.json` found in a mobile extension package. The `extension.json` file describes the contents of an extension.
 
 ## Contributing
 
