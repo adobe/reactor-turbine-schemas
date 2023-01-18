@@ -35,9 +35,7 @@
           "$ref": "#/definitions/email"
         }
       },
-      "required": [
-        "name"
-      ]
+      "required": ["name"]
     },
     "viewBasePath": {
       "$ref": "#/definitions/basePath"
@@ -50,9 +48,7 @@
       "$ref": "#/definitions/configuration"
     },
     "platform": {
-      "enum": [
-        "mobile"
-      ]
+      "enum": ["mobile"]
     },
     "repositories": {
       "type": "array",
@@ -117,13 +113,33 @@
             },
             "artifact": {
               "$ref": "#/definitions/mavenFQArtifactName"
+            },
+            "coreArtifact": {
+              "$ref": "#/definitions/mavenFQArtifactName"
             }
           },
           "additionalProperties": false,
-          "required": [
-            "className",
-            "artifact"
-          ]
+          "required": ["className", "artifact"]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "className": {
+              "$ref": "#/definitions/javaClassName"
+            },
+            "artifacts": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/mavenFQArtifactName"
+              },
+              "minItems": 1
+            },
+            "coreArtifact": {
+              "$ref": "#/definitions/mavenFQArtifactName"
+            }
+          },
+          "additionalProperties": false,
+          "required": ["className", "artifacts"]
         },
         {
           "type": "object",
@@ -137,13 +153,37 @@
             },
             "artifact": {
               "$ref": "#/definitions/mavenFQArtifactName"
+            },
+            "coreArtifact": {
+              "$ref": "#/definitions/mavenFQArtifactName"
             }
           },
           "additionalProperties": false,
-          "required": [
-            "classNames",
-            "artifact"
-          ]
+          "required": ["classNames", "artifact"]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "classNames": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/javaClassName"
+              },
+              "minItems": 1
+            },
+            "artifacts": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/mavenFQArtifactName"
+              },
+              "minItems": 1
+            },
+            "coreArtifact": {
+              "$ref": "#/definitions/mavenFQArtifactName"
+            }
+          },
+          "additionalProperties": false,
+          "required": ["classNames", "artifacts"]
         }
       ]
     },
@@ -173,12 +213,7 @@
             }
           },
           "additionalProperties": false,
-          "required": [
-            "name",
-            "headerName",
-            "interface",
-            "version"
-          ]
+          "required": ["name", "headerName", "interface", "version"]
         },
         {
           "type": "object",
@@ -215,12 +250,7 @@
             }
           },
           "additionalProperties": false,
-          "required": [
-            "name",
-            "headerNames",
-            "interfaces",
-            "version"
-          ]
+          "required": ["name", "headerNames", "interfaces", "version"]
         }
       ]
     },
@@ -251,15 +281,10 @@
           "type": "string"
         },
         "type": {
-          "enum": [
-            "object"
-          ]
+          "enum": ["object"]
         }
       },
-      "required": [
-        "$schema",
-        "type"
-      ]
+      "required": ["$schema", "type"]
     },
     "featureEvent": {
       "type": "object",
@@ -295,9 +320,7 @@
                         ]
                       }
                     },
-                    "required": [
-                      "$ref"
-                    ]
+                    "required": ["$ref"]
                   }
                 ]
               },
@@ -305,14 +328,10 @@
               "minItems": 1
             }
           },
-          "required": [
-            "allOf"
-          ]
+          "required": ["allOf"]
         }
       },
-      "required": [
-        "schema"
-      ],
+      "required": ["schema"],
       "additionalProperties": false
     },
     "featureConditions": {
@@ -349,9 +368,7 @@
                         ]
                       }
                     },
-                    "required": [
-                      "$ref"
-                    ]
+                    "required": ["$ref"]
                   }
                 ]
               },
@@ -359,14 +376,10 @@
               "minItems": 1
             }
           },
-          "required": [
-            "allOf"
-          ]
+          "required": ["allOf"]
         }
       },
-      "required": [
-        "schema"
-      ],
+      "required": ["schema"],
       "additionalProperties": false
     },
     "featureAction": {
@@ -403,9 +416,7 @@
                         ]
                       }
                     },
-                    "required": [
-                      "$ref"
-                    ]
+                    "required": ["$ref"]
                   }
                 ]
               },
@@ -413,14 +424,10 @@
               "minItems": 1
             }
           },
-          "required": [
-            "allOf"
-          ]
+          "required": ["allOf"]
         }
       },
-      "required": [
-        "schema"
-      ],
+      "required": ["schema"],
       "additionalProperties": false
     },
     "featureDataElement": {
@@ -457,9 +464,7 @@
                         ]
                       }
                     },
-                    "required": [
-                      "$ref"
-                    ]
+                    "required": ["$ref"]
                   }
                 ]
               },
@@ -467,14 +472,10 @@
               "minItems": 1
             }
           },
-          "required": [
-            "allOf"
-          ]
+          "required": ["allOf"]
         }
       },
-      "required": [
-        "schema"
-      ],
+      "required": ["schema"],
       "additionalProperties": false
     },
     "schema": {},
@@ -523,10 +524,7 @@
         }
       },
       "additionalProperties": false,
-      "required": [
-        "viewPath",
-        "schema"
-      ]
+      "required": ["viewPath", "schema"]
     },
     "feature": {
       "type": "object",
@@ -544,10 +542,7 @@
           "$ref": "#/definitions/viewPath"
         }
       },
-      "required": [
-        "name",
-        "displayName"
-      ]
+      "required": ["name", "displayName"]
     }
   }
 }
