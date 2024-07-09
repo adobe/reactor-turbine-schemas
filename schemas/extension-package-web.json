@@ -186,6 +186,31 @@
         "propertyPath"
       ]
     },
+    "addTransform": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "enum": [
+            "add"
+          ]
+        },
+        "propertyPath": {
+          "type": "string",
+          "minLength": 1
+        },
+        "reservedKey": {
+          "enum": [
+            "originId"
+          ]
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "type",
+        "propertyPath",
+        "reservedKey"
+      ]
+    },
     "features": {
       "type": "array",
       "items": {
@@ -208,6 +233,9 @@
           },
           {
             "$ref": "#/definitions/removeTransform"
+          },
+          {
+            "$ref": "#/definitions/addTransform"
           }
         ]
       }

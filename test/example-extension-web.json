@@ -550,6 +550,11 @@
         "parameters": [
           "s"
         ]
+      },
+      {
+        "type": "add",
+        "propertyPath": "id",
+        "reservedKey": "originId"
       }
     ]
   },
