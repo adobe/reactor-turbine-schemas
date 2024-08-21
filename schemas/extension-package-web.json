@@ -65,6 +65,13 @@
       "items": {
         "$ref": "#/definitions/sharedModule"
       }
+    },
+    "preprocessingVariables": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/definitions/preprocessingVariable"
+      }
     }
   },
   "additionalProperties": false,
@@ -330,6 +337,16 @@
         "libPath",
         "schema"
       ]
+    },
+    "preprocessingVariable": {
+      "type": "object",
+      "properties": {
+        "key": { "type": "string", "minLength": 1 },
+        "path": { "type": "string", "minLength": 1 },
+        "default": { "type": "boolean" }
+      },
+      "additionalProperties": false,
+      "required": ["key", "path", "default"]
     }
   }
 }
