@@ -29,8 +29,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: latest
-      - run touch .npmrc
-      - run echo "//registry.npmjs.org/:_authToken=\${NPM_TOKEN}" >> .npmrc
+      - run: touch .npmrc
+      - run: echo "//registry.npmjs.org/:_authToken=\${NPM_TOKEN}" >> .npmrc
       - run: npm dist-tag add @adobe/reactor-turbine-schemas@${{ github.event.inputs.version }} ${{ github.event.inputs.tag }}
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
