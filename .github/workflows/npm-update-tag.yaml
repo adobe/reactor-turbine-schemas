@@ -29,14 +29,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: latest
-      - uses: actions/cache@v4
-        id: npm-cache
-        with:
-          path: "**/node_modules"
-          key: ${{ runner.os }}-modules-${{ hashFiles('**/package-lock.json') }}
-      - name: Install dependencies
-        if: steps.npm-cache.outputs.cache-hit != 'true'
-        run: npm ci
+      - run touch .npmrc
+      - run echo "//registry.npmjs.org/:_authToken=\${NPM_TOKEN}" >> .npmrc
       - run: npm dist-tag add @adobe/reactor-turbine-schemas@${{ github.event.inputs.version }} ${{ github.event.inputs.tag }}
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
