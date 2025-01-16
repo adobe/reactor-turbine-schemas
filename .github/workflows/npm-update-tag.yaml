@@ -31,4 +31,4 @@ jobs:
           node-version: latest
       - run: npm dist-tag add @adobe/reactor-turbine-schemas@${{ github.event.inputs.version }} ${{ github.event.inputs.tag }}
         env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_TOKEN: ${{ secrets.ADOBE_BOT_NPM_TOKEN }}
