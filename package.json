@@ -1,6 +1,6 @@
 {
   "name": "@adobe/reactor-turbine-schemas",
-  "version": "10.7.0",
+  "version": "10.7.1",
   "description": "A collection of schema used for validation of JSON objects within Tags.",
   "repository": {
     "type": "git",
@@ -13,14 +13,14 @@
   },
   "license": "Apache-2.0",
   "devDependencies": {
-    "ajv": "^8.12.0",
+    "ajv": "^8.17.1",
     "ajv-draft-04": "^1.0.0",
-    "ajv-formats": "^2.1.1"
+    "ajv-formats": "^3.0.1"
   },
   "scripts": {
     "test": "node test/index.js"
   },
   "engines": {
-    "node": ">=14.21.2"
+    "node": ">=20.17.0"
   }
 }
