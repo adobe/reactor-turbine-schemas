@@ -172,7 +172,16 @@
             "customCode"
           ]
         }
-      }
+      },
+      "customCodeTransform2test": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "enum": [
+              "customCode"
+            ]
+          }
+        }
     },
     "removeTransform": {
       "type": "object",
