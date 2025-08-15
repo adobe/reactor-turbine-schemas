@@ -346,7 +346,13 @@
       "properties": {
         "key": { "type": "string", "minLength": 1 },
         "path": { "type": "string", "minLength": 1 },
-        "default": { "type": "boolean" }
+        "default": {
+          "oneOf": [
+            { "type": "boolean" },
+            { "type": "number" },
+            { "type": "string" }
+          ]
+        }
       },
       "additionalProperties": false,
       "required": ["key", "path", "default"]
