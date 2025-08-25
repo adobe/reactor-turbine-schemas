@@ -24,6 +24,9 @@
     "author": {
       "$ref": "#/definitions/author"
     },
+    "releaseNotesUrl": {
+      "$ref": "#/definitions/url"
+    },
     "viewBasePath": {
       "$ref": "#/definitions/basePath"
     },
