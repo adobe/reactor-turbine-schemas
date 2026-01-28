@@ -555,6 +555,11 @@
         "type": "add",
         "propertyPath": "id",
         "reservedKey": "originId"
+      },
+      {
+        "type": "add",
+        "propertyPath": "dataElementName",
+        "reservedKey": "name"
       }
     ]
   },
