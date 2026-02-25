@@ -211,7 +211,7 @@
         "reservedKey": {
           "enum": [
             "originId",
-						"name"
+            "name"
           ]
         }
       },
