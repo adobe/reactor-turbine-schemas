@@ -558,6 +558,25 @@
       }
     ]
   },
+  "dataElements": [
+    {
+      "name": "tracker-property",
+      "displayName": "Tracker Property",
+      "libPath": "src/lib/dataElements/trackerProperty.js",
+      "viewPath": "trackerProperty.html",
+      "schema": {
+        "$schema": "http://json-schema.org/draft-04/schema#",
+        "type": "object"
+      },
+      "transforms": [
+        {
+          "type": "add",
+          "propertyPath": "dataElementName",
+          "reservedKey": "name"
+        }
+      ]
+    }
+  ],
   "actions": [
     {
       "name": "set-variables",
